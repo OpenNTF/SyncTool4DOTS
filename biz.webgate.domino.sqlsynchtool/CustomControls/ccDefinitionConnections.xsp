@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xe="http://www.ibm.com/xsp/coreex">
+
+	<xp:tabbedPanel id="tabs">
+		<xp:this.selectedTab>
+				    <![CDATA[#{javascript:context.getUrlParameter("tab")}]]>
+		</xp:this.selectedTab>
+		<xp:tabPanel label="SQL" id="tabPanel1">
+
+			<xp:viewPanel rows="30" id="viewPanel1"
+				viewStyle="width:100%">
+				<xp:this.facets>
+					<xp:pager partialRefresh="true"
+						layout="Previous Group Next" xp:key="headerPager" id="pager1">
+					</xp:pager>
+				</xp:this.facets>
+				<xp:this.data>
+					<xp:dominoView var="vwConnections"
+						viewName="vwConnectionsByType" categoryFilter="SQL">
+					</xp:dominoView>
+				</xp:this.data>
+				<xp:viewColumn columnName="conTypeT" id="viewColumn1"
+					rendered="false">
+					<xp:viewColumnHeader value="Con type t"
+						id="viewColumnHeader1">
+					</xp:viewColumnHeader>
+				</xp:viewColumn>
+				<xp:viewColumn columnName="conNameT" id="viewColumn2" displayAs="link">
+					<xp:viewColumnHeader value="Name"
+						id="viewColumnHeader2">
+					</xp:viewColumnHeader>
+				<xp:eventHandler event="onclick" submit="true" refreshMode="complete">
+					<xp:this.action>
+						<xp:openPage name="/ConnectionDocument.xsp"
+							target="openDocument">
+						</xp:openPage>
+					</xp:this.action></xp:eventHandler></xp:viewColumn>
+			</xp:viewPanel>
+
+		</xp:tabPanel>
+		<xp:tabPanel label="Lotus Notes" id="tabPanel2">
+			<xp:viewPanel rows="30" id="viewPanel2" viewStyle="width:100%">
+				<xp:this.facets>
+					<xp:pager partialRefresh="true" layout="Previous Group Next"
+						xp:key="headerPager" id="pager2">
+					</xp:pager>
+				</xp:this.facets>
+				<xp:this.data>
+					<xp:dominoView var="vwConnections" viewName="vwConnectionsByType"
+						categoryFilter="Notes">
+					</xp:dominoView>
+				</xp:this.data>
+				<xp:viewColumn columnName="conTypeT" id="viewColumn3" rendered="false">
+					<xp:viewColumnHeader value="Con type t"
+						id="viewColumnHeader3">
+					</xp:viewColumnHeader>
+				</xp:viewColumn>
+				<xp:viewColumn columnName="conNameT" id="viewColumn4" displayAs="link" openDocAsReadonly="true">
+					<xp:viewColumnHeader value="Name"
+						id="viewColumnHeader4">
+					</xp:viewColumnHeader>
+				<xp:eventHandler event="onclick" submit="true" refreshMode="complete">
+					<xp:this.action>
+						<xp:openPage name="/ConnectionDocument.xsp"
+							target="openDocument">
+						</xp:openPage>
+					</xp:this.action></xp:eventHandler></xp:viewColumn>
+			</xp:viewPanel>
+		</xp:tabPanel>
+				<xp:tabPanel label="LDAP" id="tabPanel3">
+			<xp:viewPanel rows="30" id="viewPanel3" viewStyle="width:100%">
+				<xp:this.facets>
+					<xp:pager partialRefresh="true" layout="Previous Group Next"
+						xp:key="headerPager" id="pager3">
+					</xp:pager>
+				</xp:this.facets>
+				<xp:this.data>
+					<xp:dominoView var="vwConnections" viewName="vwConnectionsByType"
+						categoryFilter="LDAP">
+					</xp:dominoView>
+				</xp:this.data>
+				<xp:viewColumn columnName="conTypeT" id="viewColumn5" rendered="false">
+					<xp:viewColumnHeader value="Con type t"
+						id="viewColumnHeader5">
+					</xp:viewColumnHeader>
+				</xp:viewColumn>
+				<xp:viewColumn columnName="conNameT" id="viewColumn6" displayAs="link" openDocAsReadonly="true">
+					<xp:viewColumnHeader value="Name"
+						id="viewColumnHeader6">
+					</xp:viewColumnHeader>
+				<xp:eventHandler event="onclick" submit="true" refreshMode="complete">
+					<xp:this.action>
+						<xp:openPage name="/ConnectionDocument.xsp"
+							target="openDocument">
+						</xp:openPage>
+					</xp:this.action></xp:eventHandler></xp:viewColumn>
+			</xp:viewPanel>
+		</xp:tabPanel>
+		
+	</xp:tabbedPanel>
+
+
+</xp:view>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xe="http://www.ibm.com/xsp/coreex"
+	xmlns:xc="http://www.ibm.com/xsp/custom">
+	<xp:this.data>
+		<xp:dominoDocument var="docException" formName="frmException"
+			action="openDocument">
+		</xp:dominoDocument>
+	</xp:this.data>
+
+	<xc:ccApplication>
+		<xp:panel>
+			<xp:button id="btZurück" value="Back">
+				<xp:eventHandler event="onclick" submit="true"
+					refreshMode="complete">
+					<xp:this.action>
+						<xp:openPage name="$$PreviousPage"></xp:openPage>
+					</xp:this.action>
+				</xp:eventHandler>
+			</xp:button>
+			<xp:br></xp:br>
+			<h1>Exception</h1>
+			<xp:br></xp:br>
+			<xp:table>
+				<xp:tr>
+					<xp:td>Event ID</xp:td>
+					<xp:td>
+						<xp:text escape="true" id="cfEventID" value="#{docException.EventIDN}">
+							<xp:this.converter>
+								<xp:convertNumber pattern="0"></xp:convertNumber>
+							</xp:this.converter>
+						</xp:text>
+					</xp:td>
+				</xp:tr>
+				<xp:tr>
+					<xp:td>Message</xp:td>
+					<xp:td>
+						<xp:text escape="true" id="cfMessage" value="#{docException.MessageT}">
+						</xp:text>
+					</xp:td>
+				</xp:tr>
+				<xp:tr>
+					<xp:td>Datum / Zeit</xp:td>
+					<xp:td>
+						<xp:text escape="true" id="cfDateTime" value="#{javascript:@Created()}">
+							<xp:this.converter>
+								<xp:convertDateTime type="both"></xp:convertDateTime>
+							</xp:this.converter>
+						</xp:text>
+					</xp:td>
+				</xp:tr>
+			</xp:table>
+			<xp:br></xp:br>
+			<xp:br></xp:br>
+			Trace:
+			<xp:br></xp:br>
+			<xp:inputRichText id="rtBody" value="#{docException.BodyRT}">
+			</xp:inputRichText>
+		</xp:panel>
+		<xp:this.facets>
+			<xc:ccNavLeftDefinition xp:key="LeftColumn"></xc:ccNavLeftDefinition>
+		</xp:this.facets>
+	</xc:ccApplication>
+</xp:view>

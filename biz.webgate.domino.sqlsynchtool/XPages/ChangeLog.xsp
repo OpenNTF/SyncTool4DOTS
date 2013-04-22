@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xc="http://www.ibm.com/xsp/custom">
+	<xp:this.data>
+		<xp:dominoDocument var="docChange" action="openDocument"
+			formName="frmChangeLog">
+		</xp:dominoDocument>
+	</xp:this.data>
+
+	<xc:ccApplication navigationPath="/Definition/ChangeLog"
+		pageTitle="Changelog">
+		<xp:panel>
+			<xp:button id="btZurück" value="Back">
+				<xp:eventHandler event="onclick" submit="true"
+					refreshMode="complete">
+					<xp:this.action>
+						<xp:openPage name="$$PreviousPage"></xp:openPage>
+					</xp:this.action>
+				</xp:eventHandler>
+			</xp:button>
+			<xp:br></xp:br>
+			<h1>Change Log Entry</h1>
+			<xp:br></xp:br>
+			<xp:table>
+				<xp:tr>
+					<xp:td>Date</xp:td>
+					<xp:td>
+						<xp:text escape="true" id="cfDate"
+							value="#{docChange.ChangeDateDT}">
+							<xp:this.converter>
+								<xp:convertDateTime type="date"
+									dateStyle="short">
+								</xp:convertDateTime>
+							</xp:this.converter>
+						</xp:text>
+					</xp:td>
+				</xp:tr>
+				<xp:tr>
+					<xp:td>Fieldname</xp:td>
+					<xp:td>
+						<xp:text escape="true" id="cfFieldName"
+							value="#{docChange.FieldNameT}">
+						</xp:text>
+					</xp:td>
+				</xp:tr>
+				<xp:tr>
+					<xp:td>Old Value</xp:td>
+					<xp:td>
+						<xp:text escape="true" id="cfOldValue"
+							value="#{docChange.OldValueT}">
+						</xp:text>
+					</xp:td>
+				</xp:tr>
+				<xp:tr>
+					<xp:td>New Value</xp:td>
+					<xp:td>
+						<xp:text escape="true" id="cfNewValue"
+							value="#{docChange.NewValueT}">
+						</xp:text>
+					</xp:td>
+				</xp:tr>
+				<xp:tr>
+					<xp:td>Primary Key</xp:td>
+					<xp:td>
+						<xp:text escape="true" id="cfPK"
+							value="#{docChange.PrimaryKeyT}">
+						</xp:text>
+					</xp:td>
+				</xp:tr>
+				<xp:tr>
+					<xp:td>Target</xp:td>
+					<xp:td>
+						<xp:text escape="true" id="cfTarget"
+							value="#{docChange.TargetIDT}">
+						</xp:text>
+					</xp:td>
+				</xp:tr>
+			</xp:table>
+		</xp:panel>
+		<xp:this.facets>
+			<xc:ccNavLeftDefinition xp:key="LeftColumn"></xc:ccNavLeftDefinition>
+		</xp:this.facets>
+	</xc:ccApplication>
+</xp:view>

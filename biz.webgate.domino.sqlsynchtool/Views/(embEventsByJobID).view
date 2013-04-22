@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE note SYSTEM 'xmlschemas/domino_8_5_3.dtd'>
+<note class='view' xmlns='http://www.lotus.com/dxl' version='8.5' maintenanceversion='3.0'
+ replicaid='C1257A93006B892F'>
+<noteinfo noteid='4a2' unid='5A41F603096B7683C12579ED006B7C75' sequence='22'>
+<created><datetime dst='true'>20120427T213402,13+02</datetime></created>
+<modified><datetime dst='true'>20121010T221646,38+02</datetime></modified>
+<revised><datetime dst='true'>20121010T221646,37+02</datetime></revised>
+<lastaccessed><datetime dst='true'>20121010T221646,38+02</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20121010T214713,76+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Christian Guedemann/O=WGC/C=CH</name><name>CN=Consultant WebGate/O=CARNET</name><name
+>CN=chzrhdrs01/OU=ch/O=poyry-directory</name><name>CN=Christian Guedemann/O=WGC/C=CH</name></updatedby>
+<wassignedby><name>CN=Christian Guedemann/O=WGC/C=CH</name></wassignedby>
+<item name='$FormulaClass' sign='true'><text>1</text></item>
+<item name='$TITLE' sign='true'><text>(embEventsByJobID)|embEventsByJobID</text></item>
+<item name='$Index' sign='true'><text/></item>
+<item name='$Formula' summary='true' sign='true'><formula compiled='true'>
+lAACABgAAgAkNWkATgFpAE8BaQBQAUsDAwACABAABgBUaW1lRFRpAAMABQA8ADcABgAGAAIACAAG
+AAgACQBKb2JJRFQkNUV2ZW50SUROVGltZURUTWVzc2FnZVQkQ29uZmxpY3QABAAEAAAAIAAFAAQA
+Rm9ybQEADABmcm1FeGNlcHRpb24KAgMABwAKAAQACUwxUw==
+</formula></item>
+<item name='$Collation' summary='true'>
+<rawitemdata type='2'>
+OAAEAABECGYHAAAGAIlmBwYAAgCIZgcIAAgAgWYAEAAGAEpvYklEVCQ1RXZlbnRJRE5UaW1lRFQ=
+</rawitemdata></item>
+<item name='$ViewFormat' summary='true' sign='true'>
+<rawitemdata type='5'>
+AQAFAAYACgAAAFZDAwAGAAYAAAAAAFAAAQAACgABAAAAAAAAAAICAAAAVkMHAAIABgAmAAAAUAAB
+AAAJAAEAAAAAAAAAAAIAAABWQwMACAAIAAAAAABQAAEAAAkAAQABAAAAAAACAgAAAFZDBQAGAAYA
+EgAAAFAAAQAACgAAAAAAAAAAAAECAAAAVkMAAAgACAAAAAAAUAABAAAKAAAAAAAAAAAAAgIAAABK
+b2JJRFRKb2JJRFQkNURhdGVEVCYAAgAYAAIAJDVpAE4BaQBPAWkAUAFLAwMABwAMAAUACTBTMEUA
+RXZlbnRJRE5FdmVudElETlRpbWVEVFRpbWVEVBIAAgAQAAYAVGltZURUaQADAE1lc3NhZ2VUTWVz
+c2FnZVQmAAEAAAABAQAJAQAACgEBDgoAAAEArSsBAAEAAQAAAAAAAAAAAFdDAQEACQAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAP//AAAAAAAAAAAAAAAAAABXQwEBAAkAAAAAAAAAAAAAAAAAAAAAAADE
+AAAAAAD//wAAAAAAAAAAAAAAAAAAV0MBAQAJAAAAAAAAAAAAAAAAAAAAAAAAhAAAAAAA//8AAAAA
+AAAAAAAAAAAAAFdDAQEACQAAAAAAAAAAAAAAAAAAAAAAAMQAAAAAAP//AAAAAAAAAAAAAAAAAABX
+QwEBAAkAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAD//wAAAAAAAAAAAAAAAAAAQgAAAAAAAQD///8A
+BQD///8AAQAAAAAAAAAAAAAAAAABAP///wABAP///wAAAAEAAAAAAAEAAAAAAAEAAAAAAAAACAAA
+AAAAAQBYQwBIgAMAAAAAAAECAgIBAQEBBwQDAAAAAAAAAAAgLi46WEMARIADAAAAAAABAgICAQEB
+AQcEAwAAAAAAAAAAIC4uOllDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAABZQwABAAAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA
+AAAAAAAALidTRnIuWUMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAA==
+</rawitemdata></item>
+<item name='$Comment' sign='true'><text/></item>
+<item name='$DesignerVersion' sign='true'><text>8.5.3</text></item>
+<item name='$Flags'><text>Y</text></item></note>
+

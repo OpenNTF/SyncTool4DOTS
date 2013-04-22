@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE note SYSTEM 'xmlschemas/domino_8_5_3.dtd'>
+<note class='form' xmlns='http://www.lotus.com/dxl' version='8.5' maintenanceversion='3.0'
+ replicaid='C1257A93006B892F'>
+<noteinfo noteid='4c6' unid='DECF663E2AD462F4C12579C400285195' sequence='4'>
+<created><datetime>20120317T082023,25+01</datetime></created>
+<modified><datetime dst='true'>20121010T221645,72+02</datetime></modified>
+<revised><datetime dst='true'>20121010T221645,71+02</datetime></revised>
+<lastaccessed><datetime dst='true'>20121010T221645,72+02</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20121010T214714,08+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Christian Guedemann/O=WGC/C=CH</name><name>CN=Consultant WebGate/O=CARNET</name><name
+>CN=chzrhdrs01/OU=ch/O=poyry-directory</name><name>CN=Christian Guedemann/O=WGC/C=CH</name></updatedby>
+<wassignedby><name>CN=Christian Guedemann/O=WGC/C=CH</name></wassignedby>
+<item name='$Flags'><text>34yQC</text></item>
+<item name='$TITLE'><text>$ACTIONS</text></item>
+<item name='$Body' sign='true' seal='true'>
+<rawitemdata type='1'>
+gv9GAAIAAAAAAAAAAACgBQAAoAUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAKYsAAAAAAIATm9ybWFsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+gQKDBAIAhf8IAAEAAAo=
+</rawitemdata></item>
+<item name='$V5ACTIONS' sign='true'>
+<rawitemdata type='1'>
+vRxPAAAAAQABAAAAAQAAAAEAAAAAAAAACAACAHn/bAABAOLi4gABAAAAAAAJAAAAAAABAOLi4gAA
+AB8AAAAAAAAAAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAPz/OgAAAAAAAQAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAEAAAAAAAAAAAAAAAAAAAC+/0YAAAABAAAAnkERBQEAAAABAAAAIBQuAAAAIgABABUA
+aHR0cDovL3d3dy53ZWJnYXRlLmNoAOABAwAHAAoAAwAJMVMA9v8zAAAAAAADABMAEQAAAAAAAAAA
+AAAAAAAAAAAAAAAAAGxvdHVzc29mdHdhcmUuZ2lmP1//EAACAAwABwAAAAAAAABf/xAAAgABAAcA
+AAAAAAAAX/8QAAIAAgAHAAAAAAAAAF//EAACAAsABwAAAAAAAABf/xAAAgAUAAcAAAAAAAAAX/8Q
+AAIACQAHAAAAAAAAAF//EAACAAgABwAAAAAAAABf/xAAAgAKAAcAAAAAAAAAX/8QAAIAAwAHAAAA
+AAAAAF//EAACAAYABwAAAAAAAABf/xAAAgAHAAcAAAAAAAAAX/8QAAIABQAHAAAAAAAAAF//EAAC
+AAQABwAAAAAAAAA=
+</rawitemdata></item>
+<item name='$ACTIONS' sign='true'>
+<rawitemdata type='1'>
+vRxPAAAAAQABAAAAAQAAAAEAAAAAAAAACAACAL7/RgAAAAEAAACeQREFAQAAAAEAAAAg3S4AAAAi
+AAEAFQBodHRwOi8vd3d3LndlYmdhdGUuY2gA4AEDAAcACgADAAkxUwA=
+</rawitemdata></item>
+<item name='$DesignerVersion' sign='true'><text>6.5</text></item></note>
+

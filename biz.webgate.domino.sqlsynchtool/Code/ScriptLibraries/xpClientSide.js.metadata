@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="filter" maintenanceversion="3.0" replicaid="C1257A93006B892F" version="8.5" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="456" sequence="4" unid="DF462F1C80853E44C1257A93006B8FBA">
+<created><datetime dst="true">20121010T213451,46+02</datetime></created>
+<modified><datetime dst="true">20121010T214717,82+02</datetime></modified>
+<revised><datetime dst="true">20120924T142106,10+02</datetime></revised>
+<lastaccessed><datetime dst="true">20121010T214717,82+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20121010T213451,47+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Christian Guedemann/O=WGC/C=CH</name><name>CN=Consultant WebGate/O=CARNET</name><name>CN=chzrhdrs01/OU=ch/O=poyry-directory</name></updatedby>
+<item name="$TITLE" sign="true"><text>xpClientSide</text></item>
+<item name="$Flags"><text>h534Q</text></item>
+<item name="$PublicAccess" sign="true"><text>1</text></item>
+<item name="$DesignerVersion" sign="true"><text>8.5.3</text></item>
+
+<item name="$POID"><datetime dst="true">20120924T142106,10+02</datetime></item></note>

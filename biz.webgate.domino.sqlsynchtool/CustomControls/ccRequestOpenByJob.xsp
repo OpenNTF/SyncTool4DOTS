@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xe="http://www.ibm.com/xsp/coreex">
+	<xp:this.data>
+		<xp:dominoView var="viwOR" viewName="lupOpenRequestByJobID"
+			keys="#{javascript:compositeData.JobID}">
+		</xp:dominoView>
+	</xp:this.data>
+
+	<xe:widgetContainer id="wdgOR" titleBar="true"
+		type="standard" titleBarText="Open Requests">
+		<xp:panel>
+			<xp:table>
+				<xp:tr>
+					<xp:td>
+						<xp:link escape="true" text="new"
+							id="lnkNewRequest">
+							<xp:eventHandler event="onclick"
+								submit="false">
+								<xp:this.script><![CDATA[XSP.openDialog("#{id:dialNewRequest}")]]></xp:this.script>
+							</xp:eventHandler>
+						</xp:link>
+					</xp:td>
+				</xp:tr>
+				<xp:repeat id="rpOR" rows="5" value="#{viwOR}"
+					var="veOR">
+					<xp:tr>
+						<xp:td>
+							<xp:text escape="true" id="computedField1"
+								value="#{veOR.ExecutionDateDT}">
+								<xp:this.converter>
+									<xp:convertDateTime type="date"></xp:convertDateTime>
+								</xp:this.converter>
+							</xp:text>
+							-
+							<xp:text escape="true" id="computedField2"
+								value="#{veOR.ExecutionTimeDT}">
+								<xp:this.converter>
+									<xp:convertDateTime type="time"></xp:convertDateTime>
+								</xp:this.converter>
+							</xp:text>
+						</xp:td>
+					</xp:tr>
+				</xp:repeat>
+			</xp:table>
+
+		</xp:panel>
+		<xe:dialog id="dialNewRequest" title="New Request"
+			tooltip="Setup a new Request for this Job Definition">
+			<xp:panel>
+				<xp:this.data>
+					<xp:dominoDocument var="docRNew"
+						formName="frmRequest" ignoreRequestParams="true">
+					<xp:this.querySaveDocument><![CDATA[#{javascript:docRNew.replaceItemValue("TypeT", "Job");
+docRNew.replaceItemValue("ActiveT", "1");
+docRNew.replaceItemValue("JobIDT", compositeData.JobID);
+docRNew.replaceItemValue("JobNameT", compositeData.JobName);
+
+}]]></xp:this.querySaveDocument></xp:dominoDocument>
+				</xp:this.data>
+				<xe:dialogContent id="dialogContent1">
+					<xp:table>
+						<xp:tr>
+							<xp:td>Date</xp:td>
+							<xp:td>
+								<xp:inputText id="itDate"
+									value="#{docRNew.ExecutionDateDT}" required="true">
+									<xp:dateTimeHelper
+										id="dateTimeHelper1">
+									</xp:dateTimeHelper>
+
+									<xp:this.converter>
+										<xp:convertDateTime type="date"
+											dateStyle="short">
+										</xp:convertDateTime>
+									</xp:this.converter>
+								</xp:inputText>
+							</xp:td>
+						</xp:tr>
+						<xp:tr>
+							<xp:td>Time</xp:td>
+							<xp:td>
+								<xp:inputText id="itTime"
+									value="#{docRNew.ExecutionTimeDT}" required="true">
+									<xp:dateTimeHelper
+										id="dateTimeHelper2">
+									</xp:dateTimeHelper>
+
+									<xp:this.converter>
+										<xp:convertDateTime type="time"
+											timeStyle="short">
+										</xp:convertDateTime>
+									</xp:this.converter>
+								</xp:inputText>
+							</xp:td>
+						</xp:tr>
+					</xp:table>
+				</xe:dialogContent>
+				<xe:dialogButtonBar id="dialogButtonBar1">
+					<xp:button value="Save" id="button1"><xp:eventHandler event="onclick" submit="true" refreshMode="complete">
+	<xp:this.action>
+
+		<xp:actionGroup>
+			<xp:saveDocument var="docRNew"></xp:saveDocument>
+			<xp:executeScript>
+				<xp:this.script><![CDATA[#{javascript:getComponent("dialNewRequest").hide("wdgOR")}]]></xp:this.script>
+			</xp:executeScript>
+		</xp:actionGroup>
+	</xp:this.action></xp:eventHandler></xp:button>
+					<xp:link escape="true" text="cancel"
+						id="lnkCancel">
+						<xp:eventHandler event="onclick" submit="true"
+							refreshMode="complete">
+							<xp:this.action><![CDATA[#{javascript:getComponent("dialNewRequest").hide()}]]></xp:this.action>
+						</xp:eventHandler>
+					</xp:link></xe:dialogButtonBar>
+			</xp:panel>
+		</xe:dialog>
+	</xe:widgetContainer>
+</xp:view>

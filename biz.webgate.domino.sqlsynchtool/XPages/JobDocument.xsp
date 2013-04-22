@@ -1,0 +1,771 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom"
+	xmlns:xe="http://www.ibm.com/xsp/coreex">
+	
+
+	<xp:this.data>
+		<xp:dominoDocument var="docJob" formName="frmJob">
+			<xp:this.querySaveDocument><![CDATA[#{javascript:calcValuesSave()}]]></xp:this.querySaveDocument>
+		</xp:dominoDocument>
+	</xp:this.data>
+	<xp:this.resources>
+		<xp:script src="/biz.webgate.sqlsync.jobdocument.functions.jss"
+			clientSide="false">
+		</xp:script>
+		<xp:styleSheet href="/synctool.css"></xp:styleSheet>
+	</xp:this.resources>
+	<xc:ccApplication navigationPath="/Definition/JobDocument">
+		<xp:panel>
+			<xe:formTable id="frmJob" formTitle="Job"
+				formDescription="Definition for a synchronisation" rendered="#{javascript:docJob.isEditable()}">
+				<xp:this.facets>
+					<xp:panel xp:key="footer">
+						<xp:button id="btSave" value="Save"
+							rendered="#{javascript:docJob.isEditable()}">
+							<xp:eventHandler event="onclick" submit="true"
+								refreshMode="complete">
+								<xp:this.action>
+
+									<xp:actionGroup>
+										<xp:saveDocument var="docJob"></xp:saveDocument>
+										<xp:changeDocumentMode mode="readOnly"
+											var="docJob">
+										</xp:changeDocumentMode>
+									</xp:actionGroup>
+								</xp:this.action>
+							</xp:eventHandler>
+						</xp:button>
+						<xp:button value="Edit" id="btEdit"
+							rendered="#{javascript:!docJob.isEditable()}">
+							<xp:eventHandler event="onclick" submit="true"
+								refreshMode="complete">
+								<xp:this.action>
+									<xp:changeDocumentMode mode="edit" var="docJob">
+									</xp:changeDocumentMode>
+								</xp:this.action>
+							</xp:eventHandler>
+						</xp:button>
+						<xp:link escape="true" id="lnkCancel" text="Cancel"
+							value="/DefinitionJobs.xsp">
+						</xp:link>
+					</xp:panel>
+				</xp:this.facets>
+				<xe:formRow id="formRow1" label="Name" labelPosition="left"
+					for="itName">
+					<xp:inputText id="itName" value="#{docJob.JobNameT}"
+						defaultValue="new Job" styleClass="inputFieldDefault">
+					</xp:inputText>
+				</xe:formRow>
+
+
+
+
+				<xe:formRow id="formRow2" label="Source Connection"
+					labelPosition="left" for="itSourceName">
+					<xp:inputText id="itSourceName" value="#{docJob.SourceConnectionNameT}">
+						<xp:typeAhead mode="partial" minChars="1" ignoreCase="true">
+							<xp:this.valueList><![CDATA[#{javascript:getComponent("vpSourceID").getTypeAheadValue(this)}]]></xp:this.valueList>
+						</xp:typeAhead>
+					</xp:inputText>
+					<xe:valuePicker id="vpSourceID" for="itSourceName"
+						rendered="#{javascript:docJob.isEditable()}">
+						<xe:this.dataProvider>
+							<xe:dominoViewValuePicker viewName="plSourceConnection"
+								labelColumn="Connection">
+							</xe:dominoViewValuePicker>
+						</xe:this.dataProvider>
+						<xp:text escape="true" id="cbSourceName"
+							value="#{docJob.SourceConnectionNameT}">
+						</xp:text>
+					</xe:valuePicker>
+				</xe:formRow>
+				<xe:formRow id="formRow3" for="itTargetName" label="Target Connection"
+					labelPosition="left">
+					<xp:inputText id="itTargetName" value="#{docJob.TargetConnectionNameT}">
+						<xp:typeAhead mode="partial" minChars="1" ignoreCase="true">
+							<xp:this.valueList><![CDATA[#{javascript:getComponent("vpTarget").getTypeAheadValue(this)}]]></xp:this.valueList>
+						</xp:typeAhead>
+					</xp:inputText>
+					<xe:valuePicker id="vpTarget" for="itTargetName"
+						rendered="#{javascript:docJob.isEditable()}">
+						<xe:this.dataProvider>
+							<xe:dominoViewValuePicker labelColumn="Connection"
+								viewName="plTargetConnection">
+							</xe:dominoViewValuePicker>
+						</xe:this.dataProvider>
+					</xe:valuePicker>
+				</xe:formRow>
+				<xe:formRow id="formRow4" for="itKeyField" label="Keyfield"
+					labelPosition="left">
+					<xp:inputText id="itKeyField" value="#{docJob.KeyFieldT}"
+						styleClass="inputFieldDefault">
+					</xp:inputText>
+				</xe:formRow>
+				<xe:formRow id="formRow5" label="Keyfieldtype" for="kftString"
+					labelPosition="left">
+					<xp:radio text="Integer" id="kftInteger" groupName="KeyFieldType"
+						value="#{docJob.KeyFieldTypeT}" selectedValue="1">
+					</xp:radio>
+					<xp:radio text="Double" id="kftDouble" value="#{docJob.KeyFieldTypeT}"
+						selectedValue="2" groupName="KeyFieldType">
+					</xp:radio>
+					<xp:radio text="Date" id="kftDate" value="#{docJob.KeyFieldTypeT}"
+						selectedValue="3" groupName="KeyFieldType">
+					</xp:radio>
+					<xp:radio text="String" id="kftString" defaultSelected="true"
+						groupName="KeyFieldType" value="#{docJob.KeyFieldTypeT}"
+						selectedValue="4">
+					</xp:radio>
+				</xe:formRow>
+				<xe:formRow id="formRow9" for="cbLog" label="Field Logging" labelPosition="left">
+					<xp:checkBox text="Log Changes" id="cbLog" value="#{docJob.ChangeLogT}" checkedValue="1"></xp:checkBox></xe:formRow>
+				<xe:formRow id="formRow6" labelPosition="left"
+					for="itJobAfterCreate" label="Job after record creation">
+					<xp:inputText id="itJobAfterCreate" styleClass="inputFieldDefault"
+						value="#{docJob.JobAfterCreateT}"></xp:inputText>
+				</xe:formRow>
+				<xe:formRow id="formRow7" label="Job after record update"
+					for="itJobAfterUpdate" labelPosition="left">
+					<xp:inputText id="itJobAfterUpdate" value="#{docJob.JobAfterUpdateT}"
+						styleClass="inputFieldDefault"></xp:inputText>
+				</xe:formRow>
+				<xe:formRow id="formRow8" for="cfJobAfterExecution"
+					label="Job after execution" labelPosition="left">
+					<xp:inputText id="cfJobAfterExecution" styleClass="inputFieldDefault"
+						value="#{docJob.JobAfterExcecutionT}"></xp:inputText>
+				</xe:formRow>
+				<xe:formRow id="formRow10" label="Scheduling" labelPosition="left">
+					<xp:panel>
+						
+						<xp:radioGroup id="rdSchedule"
+							value="#{docJob.ScheduleT}" layout="pageDirection" defaultValue="ONREQUEST">
+							<xp:selectItem itemLabel="Daily"
+								itemValue="DAILY">
+							</xp:selectItem>
+							<xp:selectItem itemLabel="Weekly"
+								itemValue="WEEKLY">
+							</xp:selectItem>
+							<xp:selectItem itemLabel="Hourly"
+								itemValue="HOURLY">
+							</xp:selectItem>
+							<xp:selectItem itemLabel="On Request" itemValue="ONREQUEST"></xp:selectItem>
+							<xp:eventHandler event="onchange"
+								submit="true" refreshMode="partial" refreshId="panScheduleDetails">
+							</xp:eventHandler></xp:radioGroup>
+						<xp:br></xp:br>
+						<xp:panel id="panScheduleDetails">
+						<xp:panel id="panSchedDaily">
+							<xp:this.rendered><![CDATA[#{javascript:"DAILY".equals(getComponent("rdSchedule").getValue())}]]></xp:this.rendered>
+							<xp:label value="Daily at" id="label10"
+								for="itSchedDaily">
+							</xp:label>
+							<xp:inputText id="itSchedDaily"
+								value="#{docJob.ScheduleTimeDT}">
+								<xp:dateTimeHelper
+									id="dateTimeHelper1">
+								</xp:dateTimeHelper>
+
+								<xp:this.converter>
+									<xp:convertDateTime type="time"
+										timeStyle="short">
+									</xp:convertDateTime>
+								</xp:this.converter>
+							</xp:inputText>
+						</xp:panel>
+						<xp:panel id="panSchedHourly">
+							<xp:this.rendered><![CDATA[#{javascript:"HOURLY".equals(getComponent("rdSchedule").getValue())}]]></xp:this.rendered>
+							<xp:label value="Every our at" id="lbHourly"
+								for="itSchedHourly">
+							</xp:label>
+							<xp:inputText id="itSchedHourly"
+								value="#{docJob.ScheduleMinuteN}" defaultValue="15">
+								<xp:this.converter>
+									<xp:convertNumber type="number">
+									</xp:convertNumber>
+								</xp:this.converter>
+								<xp:this.validators>
+									<xp:validateLongRange maximum="60"
+										minimum="0">
+									</xp:validateLongRange>
+								</xp:this.validators>
+							</xp:inputText>
+						</xp:panel>
+						</xp:panel></xp:panel></xe:formRow>
+			</xe:formTable>
+		</xp:panel>
+		<xp:panel rendered="#{javascript:!currentDocument.isEditable();}">
+			<xp:panel>
+				<xp:button value="Create Fieldmapping" id="btNew" xp:key="pagerTopLeft">
+					<xp:eventHandler event="onclick" submit="false">
+						<xp:this.script><![CDATA[XSP.openDialog("#{id:dialNewFM}")]]></xp:this.script>
+					</xp:eventHandler>
+				</xp:button>
+				<xp:button value="Edit" id="button1">
+					<xp:eventHandler event="onclick" submit="true"
+						refreshMode="complete">
+						<xp:this.action>
+							<xp:changeDocumentMode mode="edit"></xp:changeDocumentMode>
+						</xp:this.action>
+					</xp:eventHandler>
+				</xp:button>
+				<xp:br></xp:br>
+				<xp:br></xp:br>
+			</xp:panel>
+			<xe:widgetContainer id="widgetContainer1">
+				<xe:this.titleBarText><![CDATA[#{javascript:docJob.getItemValueString("JobNameT")}]]></xe:this.titleBarText>
+				<xp:table>
+					<xp:tr>
+						<xp:td colspan="2" style="font-weight:bold">
+							Connections
+						</xp:td>
+						<xp:td colspan="2" style="font-weight:bold">
+							Jobs
+						</xp:td>
+					</xp:tr>
+					<xp:tr>
+						<xp:td styleClass="labelReadDefault">
+							Source Connection
+						</xp:td>
+						<xp:td styleClass="inputFieldDefault">
+							<xp:text escape="true"
+								id="computedField1">
+								<xp:this.value><![CDATA[#{javascript:docJob.getItemValueString("SourceConnectionNameT")}]]></xp:this.value>
+							</xp:text>
+						</xp:td>
+						<xp:td styleClass="labelReadDefault">
+							After record creation
+						</xp:td>
+						<xp:td styleClass="inputFieldDefault">
+							<xp:text escape="true" id="computedField5"
+								value="#{docJob.JobAfterCreateT}">
+							</xp:text>
+						</xp:td>
+
+					</xp:tr>
+					<xp:tr>
+						<xp:td styleClass="labelReadDefault">
+							Target Connection
+						</xp:td>
+						<xp:td styleClass="inputFieldDefault">
+							<xp:text escape="true"
+								id="computedField2">
+								<xp:this.value><![CDATA[#{javascript:docJob.getItemValueString("TargetConnectionNameT")}]]></xp:this.value>
+							</xp:text>
+						</xp:td>
+						<xp:td styleClass="labelReadDefault">
+							After record update
+						</xp:td>
+						<xp:td styleClass="inputFieldDefault">
+							<xp:text escape="true" id="computedField6"
+								value="#{docJob.JobAfterUpdateT}">
+							</xp:text>
+						</xp:td>
+					</xp:tr>
+					<xp:tr>
+						<xp:td colspan="2" style="font-weight:bold">
+							Dataset matching
+						</xp:td>
+						<xp:td styleClass="labelReadDefault">
+							After execution
+						</xp:td>
+						<xp:td styleClass="inputFieldDefault">
+							<xp:text escape="true" id="computedField10"
+								value="#{docJob.JobAfterExcecutionT}">
+
+							</xp:text>
+						</xp:td>
+					</xp:tr>
+					<xp:tr>
+						<xp:td styleClass="labelReadDefault">
+							Keyfield
+						</xp:td>
+						<xp:td styleClass="inputFieldDefault">
+							<xp:text escape="true"
+								id="computedField3">
+								<xp:this.value><![CDATA[#{javascript:docJob.getItemValueString("KeyFieldT")}]]></xp:this.value>
+							</xp:text>
+						</xp:td>
+						<xp:td></xp:td>
+						<xp:td></xp:td>
+					</xp:tr>
+					<xp:tr>
+						<xp:td styleClass="labelReadDefault">
+							Keyfield Type
+						</xp:td>
+						<xp:td styleClass="inputFieldDefault">
+							<xp:text escape="true"
+								id="computedField4">
+								<xp:this.value><![CDATA[#{javascript:getTypeString(docJob.getItemValueString("KeyFieldTypeT"))}]]></xp:this.value>
+							</xp:text>
+						</xp:td>
+						<xp:td></xp:td>
+						<xp:td></xp:td>
+					</xp:tr>
+					<xp:tr>
+						<xp:td></xp:td>
+						<xp:td></xp:td>
+						<xp:td></xp:td>
+						<xp:td></xp:td>
+					</xp:tr>
+					<xp:tr>
+						<xp:td></xp:td>
+						<xp:td></xp:td>
+						<xp:td></xp:td>
+						<xp:td></xp:td>
+					</xp:tr>
+					<xp:tr>
+						<xp:td></xp:td>
+						<xp:td></xp:td>
+						<xp:td></xp:td>
+						<xp:td></xp:td>
+					</xp:tr>
+					<xp:tr>
+						<xp:td></xp:td>
+						<xp:td></xp:td>
+						<xp:td></xp:td>
+						<xp:td></xp:td>
+					</xp:tr>
+				</xp:table>
+			</xe:widgetContainer>
+			<xe:djTabContainer id="djTabContainer1" style="width:100.0%;height:800.0px">
+				<xe:djTabPane id="djTabPane2" title="Fieldmapping">
+					<xe:dataView id="dataView1" var="veFM"
+						collapsibleDetail="true" columnTitles="false" showCheckbox="false"
+						expandedDetail="true" rows="10" indexVar="idxFM">
+
+						<xe:this.extraColumns>
+							<xe:viewExtraColumn
+								columnName="TargetFieldT">
+							</xe:viewExtraColumn>
+							<xe:viewExtraColumn>
+								<xe:this.value><![CDATA[#{javascript:getTypeString(veFM.getColumnValue("TargetTypeT")) +" ("+veFM.getColumnValue("TargetTypeT")+")"}]]></xe:this.value>
+							</xe:viewExtraColumn>
+							<xe:viewExtraColumn columnName="FormulaT">
+
+							</xe:viewExtraColumn>
+
+						</xe:this.extraColumns>
+						<xp:this.facets>
+							<xp:pager layout="Previous Group Next"
+								partialRefresh="true" id="pager2" xp:key="pagerBottomRight">
+							</xp:pager>
+							<xp:pager layout="Previous Group Next"
+								partialRefresh="true" id="pager1" xp:key="pagerTopRight">
+							</xp:pager>
+							<xp:panel xp:key="detail"
+								id="panelEditAction">
+								<xp:link id="lblEdit" text="Edit">
+
+									<xp:eventHandler event="onclick"
+										submit="false">
+										<xp:this.script><![CDATA[XSP.openDialog("#{id:dialEditFM}")]]></xp:this.script>
+									</xp:eventHandler>
+								</xp:link>
+								&#160;&#160;
+								<xp:link id="lblRemove" text="Remove">
+
+
+									<xp:eventHandler event="onclick"
+										submit="true" refreshMode="complete">
+										<xp:this.action><![CDATA[#{javascript:var docEntry:NotesDocument = veFM.getDocument();
+docEntry.remove(true);
+}]]></xp:this.action>
+										<xp:this.script><![CDATA[var answer = confirm("Do you really want to remove this field mapping entry?");
+return(answer)]]></xp:this.script>
+									</xp:eventHandler>
+								</xp:link>
+								<xe:dialog id="dialEditFM"
+									title="Edit Fieldmapping" tooltip="Modify FieldMapping">
+									<xp:panel>
+										<xp:this.data>
+											<xp:dominoDocument
+												var="docFME" formName="frmFieldMapping"
+												ignoreRequestParams="true" action="editDocument"
+												documentId="#{javascript:veFM.getNoteID()}">
+											</xp:dominoDocument>
+										</xp:this.data>
+
+
+										<xp:messages id="messages2"></xp:messages>
+										<xe:dialogContent
+											id="dialogContent2">
+											<xp:table>
+												<xp:tr>
+													<xp:td>
+														<xp:label
+															value="Source Field" id="label4" for="itSourecField">
+														</xp:label>
+													</xp:td>
+													<xp:td>
+														<xp:inputText
+															id="inputText1" value="#{docFME.SourceFieldT}"
+															required="true" style="width:300px">
+														</xp:inputText>
+													</xp:td>
+												</xp:tr>
+												<xp:tr>
+													<xp:td>
+														<xp:label
+															value="Target Field" id="label5" for="itTargetField">
+														</xp:label>
+													</xp:td>
+													<xp:td>
+														<xp:inputText
+															id="inputText2" value="#{docFME.TargetFieldT}"
+															required="true" style="width:300px">
+														</xp:inputText>
+													</xp:td>
+												</xp:tr>
+												<xp:tr>
+													<xp:td>
+														<xp:label
+															value="Type" id="label6" for="radio4">
+														</xp:label>
+													</xp:td>
+													<xp:td>
+														<xp:radio
+															text="Integer" id="radio5" groupName="KeyFieldType"
+															value="#{docFME.TargetTypeT}" selectedValue="1">
+														</xp:radio>
+														<xp:radio
+															text="Double" id="radio6" value="#{docFME.TargetTypeT}"
+															selectedValue="2" groupName="KeyFieldType">
+														</xp:radio>
+														<xp:radio
+															text="Date" id="radio7" value="#{docFME.TargetTypeT}"
+															selectedValue="3" groupName="KeyFieldType">
+														</xp:radio>
+														<xp:radio
+															text="String" id="radio8" defaultSelected="true"
+															groupName="KeyFieldType" value="#{docFME.TargetTypeT}"
+															selectedValue="4">
+														</xp:radio>
+													</xp:td>
+												</xp:tr>
+												<xp:tr>
+													<xp:td>
+														<xp:label
+															value="Options" id="label8" for="itFormula">
+														</xp:label>
+													</xp:td>
+													<xp:td>
+														<xp:checkBox
+															text="Create only" id="cbCreateOnly"
+															value="#{docFME.createOnlyT}" checkedValue="1">
+														</xp:checkBox>
+														<xp:br></xp:br>
+														<xp:checkBox
+															text="Update Only" id="cbUpdateOnly"
+															value="#{docFME.updateOnlyT}" checkedValue="1">
+														</xp:checkBox>
+														<xp:br></xp:br>
+														<xp:checkBox
+															text="Compute Only" id="cbComputeOnly"
+															value="#{docFME.computeOnlyT}" checkedValue="1">
+														</xp:checkBox>
+													</xp:td>
+												</xp:tr>
+												<xp:tr>
+													<xp:td>
+														<xp:label
+															value="Formula" id="label7" for="itFormula">
+														</xp:label>
+													</xp:td>
+													<xp:td>
+
+														<xp:inputTextarea
+															id="inputTextarea1" rows="4" style="width:300px"
+															value="#{docFME.TransformFormulaT}">
+														</xp:inputTextarea>
+													</xp:td>
+												</xp:tr>
+											</xp:table>
+										</xe:dialogContent>
+										<xe:dialogButtonBar
+											id="dialogButtonBar2">
+											<xp:button value="Save"
+												id="button3">
+												<xp:eventHandler
+													event="onclick" submit="true" refreshMode="complete">
+													<xp:this.action>
+
+														<xp:actionGroup>
+
+															<xp:saveDocument
+																var="docFME">
+															</xp:saveDocument>
+															<xp:executeScript>
+																<xp:this.script><![CDATA[#{javascript:getComponent("dialEditFM").hide("dataView1")}]]></xp:this.script>
+															</xp:executeScript>
+														</xp:actionGroup>
+													</xp:this.action>
+												</xp:eventHandler>
+											</xp:button>
+											<xp:link escape="true"
+												text="cancel" id="link2">
+												<xp:eventHandler
+													event="onclick" submit="true" refreshMode="complete"
+													immediate="true">
+													<xp:this.action>
+														<xp:executeScript>
+															<xp:this.script><![CDATA[#{javascript:getComponent("dialEditFM").hide()}]]></xp:this.script>
+														</xp:executeScript>
+													</xp:this.action>
+												</xp:eventHandler>
+											</xp:link>
+										</xe:dialogButtonBar>
+									</xp:panel>
+								</xe:dialog>
+							</xp:panel>
+
+						</xp:this.facets>
+						<xe:this.data>
+							<xp:dominoView var="viwFM"
+								viewName="embFieldMapping" keysExactMatch="true">
+								<xp:this.keys><![CDATA[#{javascript:docJob.getItemValueString("JobIDT")}]]></xp:this.keys>
+							</xp:dominoView>
+						</xe:this.data>
+
+
+						<xe:this.summaryColumn>
+							<xe:viewSummaryColumn
+								columnName="SourceFieldT" columnTitle="Source Field">
+
+
+								<xe:this.href><![CDATA[#{javascript:"javascript:XSP.openDialog(\""+getClientId("dialEditFM") +"\")"}]]></xe:this.href>
+							</xe:viewSummaryColumn>
+						</xe:this.summaryColumn>
+					</xe:dataView>
+				</xe:djTabPane>
+				<xe:djTabPane id="djTabPane3" title="Changelog">
+					<xe:dataView id="dataView2" var="cRow" rows="20"
+						indexVar="idxRow">
+						<xp:this.facets>
+							<xp:pager layout="Previous Group Next"
+								partialRefresh="true" id="pager6" xp:key="pagerBottomRight">
+							</xp:pager>
+							<xe:pagerExpand id="pagerExpand3"
+								xp:key="pagerBottomLeft">
+							</xe:pagerExpand>
+							<xe:pagerExpand id="pagerExpand2"
+								xp:key="pagerTopLeft">
+							</xe:pagerExpand>
+							<xp:pager layout="Previous Group Next"
+								partialRefresh="true" id="pager3" xp:key="pagerTopRight">
+							</xp:pager>
+						</xp:this.facets>
+						<xe:this.data>
+							<xp:dominoView var="viwChangeLog"
+								viewName="embChangesByJobID">
+								<xp:this.categoryFilter><![CDATA[#{javascript:docJob.getItemValueString("JobIDT")}]]></xp:this.categoryFilter>
+							</xp:dominoView>
+						</xe:this.data>
+						<xe:this.categoryColumn>
+							<xe:viewCategoryColumn
+								columnName="ChangeDateDTCompute">
+
+							</xe:viewCategoryColumn>
+							<xe:viewCategoryColumn
+								columnName="PrimaryKeyT">
+							</xe:viewCategoryColumn>
+						</xe:this.categoryColumn>
+						<xe:this.summaryColumn>
+							<xe:viewSummaryColumn
+								columnName="FieldNameT">
+								<xe:this.href><![CDATA[#{javascript:"ChangeLog.xsp?documentId="+cRow.getUniversalID()}]]></xe:this.href>
+							</xe:viewSummaryColumn>
+						</xe:this.summaryColumn>
+						<xe:this.extraColumns>
+
+							<xe:viewExtraColumn
+								columnName="OldValueT">
+							</xe:viewExtraColumn>
+							<xe:viewExtraColumn
+								columnName="NewValueT">
+							</xe:viewExtraColumn>
+							<xe:viewExtraColumn
+								columnName="FieldTypeT">
+							</xe:viewExtraColumn>
+							<xe:viewExtraColumn
+								columnName="TargetIDT">
+							</xe:viewExtraColumn>
+							<xe:viewExtraColumn
+								columnName="ChangeTimeDT">
+							</xe:viewExtraColumn>
+						</xe:this.extraColumns>
+					</xe:dataView>
+				</xe:djTabPane>
+				<xe:djTabPane id="djTabPane1" title="Events / Error">
+					<xe:dataView id="dataView3" rows="20" var="eRow"
+						collapsibleRows="true" indexVar="idxRow">
+						<xp:this.facets>
+							<xp:pager layout="Previous Group Next"
+								partialRefresh="true" id="pager5" xp:key="pagerBottomRight">
+							</xp:pager>
+							<xe:pagerExpand id="pagerExpand4"
+								xp:key="pagerBottomLeft">
+							</xe:pagerExpand>
+							<xe:pagerExpand id="pagerExpand1"
+								xp:key="pagerTopLeft">
+							</xe:pagerExpand>
+							<xp:pager layout="Previous Group Next"
+								partialRefresh="true" id="pager4" xp:key="pagerTopRight">
+							</xp:pager>
+						</xp:this.facets>
+						<xe:this.data>
+							<xp:dominoView var="viwEvents"
+								viewName="embEventsByJobID">
+								<xp:this.categoryFilter><![CDATA[#{javascript:docJob.getItemValueString("JobIDT")}]]></xp:this.categoryFilter>
+							</xp:dominoView>
+						</xe:this.data>
+						<xe:this.categoryColumn>
+							<xe:viewCategoryColumn
+								columnName="DateDT">
+							</xe:viewCategoryColumn>
+							<xe:viewCategoryColumn
+								columnName="EventIDN">
+							</xe:viewCategoryColumn>
+						</xe:this.categoryColumn>
+						<xe:this.summaryColumn>
+							<xe:viewSummaryColumn
+								columnName="MessageT">
+								<xe:this.href><![CDATA[#{javascript:"Event.xsp?documentId="+eRow.getUniversalID()}]]></xe:this.href>
+							</xe:viewSummaryColumn>
+						</xe:this.summaryColumn>
+						<xe:this.extraColumns>
+
+							<xe:viewExtraColumn columnName="TimeDT"></xe:viewExtraColumn>
+						</xe:this.extraColumns>
+					</xe:dataView>
+				</xe:djTabPane>
+			</xe:djTabContainer>
+
+			<xe:dialog id="dialNewFM" title="New Fieldmapping" tooltip="Insert new FieldMapping">
+				<xp:panel>
+					<xp:this.data>
+						<xp:dominoDocument var="docFMN" formName="frmFieldMapping"
+							ignoreRequestParams="true">
+							<xp:this.querySaveDocument><![CDATA[#{javascript:docFMN.replaceItemValue("JobIDT", docJob.getItemValueString("JobIDT"));
+docFMN.replaceItemValue("JobNameT", docJob.getItemValueString("JobNameT"));}]]></xp:this.querySaveDocument>
+						</xp:dominoDocument>
+					</xp:this.data>
+
+
+					<xp:messages id="messages1"></xp:messages>
+					<xe:dialogContent id="dialogContent1">
+						<xp:table>
+							<xp:tr>
+								<xp:td>
+									<xp:label value="Source Field" id="lbSourceField" for="itSourecField">
+									</xp:label>
+								</xp:td>
+								<xp:td>
+									<xp:inputText id="itSourecField" value="#{docFMN.SourceFieldT}"
+										required="true" style="width:300px">
+									</xp:inputText>
+								</xp:td>
+							</xp:tr>
+							<xp:tr>
+								<xp:td>
+									<xp:label value="Target Field" id="label1" for="itTargetField">
+									</xp:label>
+								</xp:td>
+								<xp:td>
+									<xp:inputText id="itTargetField" value="#{docFMN.TargetFieldT}"
+										required="true" style="width:300px">
+									</xp:inputText>
+								</xp:td>
+							</xp:tr>
+							<xp:tr>
+								<xp:td>
+									<xp:label value="Type" id="label2" for="radio4">
+									</xp:label>
+								</xp:td>
+								<xp:td>
+									<xp:radio text="Integer" id="radio1" groupName="KeyFieldType"
+										value="#{docFMN.TargetTypeT}" selectedValue="1">
+									</xp:radio>
+									<xp:radio text="Double" id="radio2" value="#{docFMN.TargetTypeT}"
+										selectedValue="2" groupName="KeyFieldType">
+									</xp:radio>
+									<xp:radio text="Date" id="radio3" value="#{docFMN.TargetTypeT}"
+										selectedValue="3" groupName="KeyFieldType">
+									</xp:radio>
+									<xp:radio text="String" id="radio4" defaultSelected="true"
+										groupName="KeyFieldType" value="#{docFMN.TargetTypeT}"
+										selectedValue="4">
+									</xp:radio>
+								</xp:td>
+							</xp:tr>
+							<xp:tr>
+								<xp:td>
+									<xp:label value="Options" id="label9" for="itFormula">
+									</xp:label>
+								</xp:td>
+								<xp:td>
+									<xp:checkBox text="Create only" id="checkBox1"
+										value="#{docFMN.createOnlyT}" checkedValue="1">
+									</xp:checkBox>
+									<xp:br></xp:br>
+									<xp:checkBox text="Update Only" id="checkBox2"
+										value="#{docFMN.updateOnlyT}" checkedValue="1">
+									</xp:checkBox>
+									<xp:br></xp:br>
+									<xp:checkBox text="Compute Only" id="checkBox3"
+										value="#{docFMN.computeOnlyT}" checkedValue="1">
+									</xp:checkBox>
+								</xp:td>
+							</xp:tr>
+
+							<xp:tr>
+								<xp:td>
+									<xp:label value="Formula" id="label3" for="itFormula">
+									</xp:label>
+								</xp:td>
+								<xp:td>
+
+									<xp:inputTextarea id="inputTextarea2"
+										value="#{docFMN.TransformFormulaT}" rows="4" style="width:300px">
+									</xp:inputTextarea>
+								</xp:td>
+							</xp:tr>
+						</xp:table>
+					</xe:dialogContent>
+					<xe:dialogButtonBar id="dialogButtonBar1">
+						<xp:button value="Save" id="button2">
+							<xp:eventHandler event="onclick" submit="true"
+								refreshMode="complete">
+								<xp:this.action>
+
+									<xp:actionGroup>
+										<xp:saveDocument var="docFMN"></xp:saveDocument>
+										<xp:executeScript>
+											<xp:this.script><![CDATA[#{javascript:getComponent("dialNewFM").hide("dataView1")}]]></xp:this.script>
+										</xp:executeScript>
+									</xp:actionGroup>
+								</xp:this.action>
+							</xp:eventHandler>
+						</xp:button>
+						<xp:link escape="true" text="cancel" id="link1">
+							<xp:eventHandler event="onclick" submit="true"
+								refreshMode="complete" immediate="true">
+								<xp:this.action>
+									<xp:executeScript>
+										<xp:this.script><![CDATA[#{javascript:getComponent("dialNewFM").hide()}]]></xp:this.script>
+									</xp:executeScript>
+								</xp:this.action>
+							</xp:eventHandler>
+						</xp:link>
+					</xe:dialogButtonBar>
+				</xp:panel>
+			</xe:dialog>
+		</xp:panel>
+		<xp:this.facets>
+			<xc:ccRequestOpenByJob xp:key="RightColumn">
+				<xc:this.JobID><![CDATA[#{javascript:docJob.getItemValueString("JobIDT")}]]></xc:this.JobID>
+				<xc:this.JobName><![CDATA[#{javascript:docJob.getItemValueString("JobNameT")}]]></xc:this.JobName>
+			</xc:ccRequestOpenByJob>
+			<xc:ccNavLeftDefinition xp:key="LeftColumn"></xc:ccNavLeftDefinition>
+		</xp:this.facets>
+	</xc:ccApplication>
+</xp:view>

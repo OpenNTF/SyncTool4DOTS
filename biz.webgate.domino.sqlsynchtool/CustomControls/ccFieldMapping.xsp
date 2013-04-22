@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xe="http://www.ibm.com/xsp/coreex">
+
+	<xp:panel>
+		<xp:button value="Create Fieldmapping" id="btNew"
+			xp:key="pagerTopLeft">
+			<xp:eventHandler event="onclick" submit="false">
+				<xp:this.script><![CDATA[XSP.openDialog("#{id:dialNewFM}")]]></xp:this.script>
+			</xp:eventHandler>
+		</xp:button>
+		<xp:button value="Edit" id="btEdit"><xp:eventHandler event="onclick" submit="true" refreshMode="complete">
+	<xp:this.action>
+		<xp:changeDocumentMode mode="edit"></xp:changeDocumentMode>
+	</xp:this.action></xp:eventHandler></xp:button></xp:panel>
+	<xe:widgetContainer id="widgetContainer1">
+		<xe:this.titleBarText><![CDATA[#{javascript:docJobMain.getItemValueString("JobNameT")}]]></xe:this.titleBarText>
+		<xp:table>
+			<xp:tr>
+				<xp:td>Source Connection</xp:td>
+				<xp:td>
+					<xp:text escape="true" id="computedField1"><xp:this.value><![CDATA[#{javascript:docJobMain.getItemValueString("SourceConnectionNameT")}]]></xp:this.value></xp:text></xp:td>
+			</xp:tr>
+			<xp:tr>
+				<xp:td>Target Connection</xp:td>
+				<xp:td>
+					<xp:text escape="true" id="computedField2"><xp:this.value><![CDATA[#{javascript:docJobMain.getItemValueString("TargetConnectionNameT")}]]></xp:this.value></xp:text></xp:td>
+			</xp:tr>
+			<xp:tr>
+				<xp:td>Keyfield</xp:td>
+				<xp:td>
+					<xp:text escape="true" id="computedField3"><xp:this.value><![CDATA[#{javascript:docJobMain.getItemValueString("KeyFieldT")}]]></xp:this.value></xp:text></xp:td>
+			</xp:tr>
+			<xp:tr>
+				<xp:td>Keyfield Type</xp:td>
+				<xp:td>
+					<xp:text escape="true" id="computedField4"><xp:this.value><![CDATA[#{javascript:docJobMain.getItemValueString("KeyFieldTypeT")}]]></xp:this.value></xp:text></xp:td>
+			</xp:tr>
+		</xp:table>
+	</xe:widgetContainer>
+	<xe:dataView id="dataView1" var="veFM">
+		<xp:this.facets>
+			
+		</xp:this.facets>
+		<xe:this.data>
+			<xp:dominoView var="viwFM" viewName="embFieldMapping"
+				keysExactMatch="true" keys="#{javascript:compositeData.JobID}">
+			</xp:dominoView>
+		</xe:this.data>
+
+		<xe:this.extraColumns>
+			<xe:viewExtraColumn columnName="TargetFieldT"></xe:viewExtraColumn>
+			<xe:viewExtraColumn columnName="TargetTypeT"></xe:viewExtraColumn>
+			<xe:viewExtraColumn columnName="FormulaT"></xe:viewExtraColumn>
+		</xe:this.extraColumns>
+		<xe:this.summaryColumn>
+			<xe:viewSummaryColumn columnName="SourceFieldT"></xe:viewSummaryColumn>
+		</xe:this.summaryColumn>
+	</xe:dataView>
+	<xe:dialog id="dialNewFM" title="New Fieldmapping" tooltip="Insert new FieldMapping">
+		<xp:panel>
+			<xp:this.data>
+				<xp:dominoDocument var="docFMN" formName="frmFieldMapping"
+					ignoreRequestParams="true">
+				<xp:this.querySaveDocument><![CDATA[#{javascript:docFMN.replaceItemValue("JobIDT", compositeData.JobID);
+docFMN.replaceItemValue("JobNameT", compositeData.JobName);}]]></xp:this.querySaveDocument></xp:dominoDocument>
+			</xp:this.data>
+
+			
+			<xp:messages id="messages1"></xp:messages>
+			<xe:dialogContent id="dialogContent1">
+				<xp:table>
+					<xp:tr>
+						<xp:td>
+							<xp:label value="Source Field" id="lbSourceField" for="itSourecField">
+							</xp:label>
+						</xp:td>
+						<xp:td>
+							<xp:inputText id="itSourecField" value="#{docFMN.SourceFieldT}" required="true"></xp:inputText>
+						</xp:td>
+					</xp:tr>
+					<xp:tr>
+						<xp:td><xp:label value="Target Field" id="label1" for="itTargetField"></xp:label></xp:td>
+						<xp:td>
+							<xp:inputText id="itTargetField" value="#{docFMN.TargetFieldT}" required="true"></xp:inputText>
+						</xp:td>
+					</xp:tr>
+					<xp:tr>
+						<xp:td><xp:label value="Type" id="label2" for="itSourecField"></xp:label></xp:td>
+						<xp:td></xp:td>
+					</xp:tr>
+					<xp:tr>
+						<xp:td><xp:label value="Formula" id="label3" for="itFormula"></xp:label></xp:td>
+						<xp:td>
+							<xp:inputText id="itFormula" value="#{docFMN.TransformFormulaT}" required="true"></xp:inputText>
+						</xp:td>
+					</xp:tr>
+				</xp:table>
+			</xe:dialogContent>
+			<xe:dialogButtonBar id="dialogButtonBar1">
+				<xp:button value="Save" id="btSave"><xp:eventHandler event="onclick" submit="true" refreshMode="complete">
+	<xp:this.action>
+
+		<xp:actionGroup>
+			<xp:saveDocument var="docFMN"></xp:saveDocument>
+			<xp:executeScript>
+				<xp:this.script><![CDATA[#{javascript:getComponent("dialNewFM").hide("dataView1")}]]></xp:this.script>
+			</xp:executeScript>
+		</xp:actionGroup>
+	</xp:this.action></xp:eventHandler></xp:button>
+				<xp:link escape="true" text="Link" id="link1"></xp:link></xe:dialogButtonBar>
+		</xp:panel>
+	</xe:dialog>
+</xp:view>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config>
+  <faces-config-extension>
+    <namespace-uri>http://www.ibm.com/xsp/custom</namespace-uri>
+    <default-prefix>xc</default-prefix>
+  </faces-config-extension>
+  <composite-component>
+    <component-type>ccFieldMapping</component-type>
+    <composite-name>ccFieldMapping</composite-name>
+    <composite-file>/ccFieldMapping.xsp</composite-file>
+    <composite-extension>
+      <designer-extension>
+        <in-palette>true</in-palette>
+      </designer-extension>
+    </composite-extension>
+    <property>
+      <property-name>JobID</property-name>
+      <property-class>string</property-class>
+      <description>ID des Jobs</description>
+    </property>
+    <property>
+      <property-name>JobName</property-name>
+      <property-class>string</property-class>
+      <description>Namen des Job</description>
+    </property>
+  </composite-component>
+</faces-config>

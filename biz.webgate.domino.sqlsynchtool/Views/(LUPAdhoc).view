@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE note SYSTEM 'xmlschemas/domino_8_5_3.dtd'>
+<note class='view' xmlns='http://www.lotus.com/dxl' version='8.5' maintenanceversion='3.0'
+ replicaid='C1257A93006B892F'>
+<noteinfo noteid='1d2' unid='4CA9F20C15D910A7C1257A93006B8A8F' sequence='5'>
+<created><datetime dst='true'>20121010T213438,23+02</datetime></created>
+<modified><datetime dst='true'>20121010T221647,06+02</datetime></modified>
+<revised><datetime dst='true'>20121010T221647,05+02</datetime></revised>
+<lastaccessed><datetime dst='true'>20121010T221647,06+02</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20121010T213438,47+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Christian Guedemann/O=WGC/C=CH</name><name>CN=Consultant WebGate/O=CARNET</name><name
+>CN=CNAppl01/O=CARNET</name><name>CN=chzrhdrs01/OU=ch/O=poyry-directory</name><name
+>CN=Christian Guedemann/O=WGC/C=CH</name></updatedby>
+<wassignedby><name>CN=Christian Guedemann/O=WGC/C=CH</name></wassignedby>
+<item name='$FormulaClass' sign='true'><text>1</text></item>
+<item name='$TITLE' sign='true'><text>(LUPAdhoc)|LUPAdhoc</text></item>
+<item name='$Index' sign='true'><text/></item>
+<item name='$Formula' summary='true' sign='true'><formula compiled='true'>
+fgAFABoAFQACAAkABAAkQ29uZmxpY3QkUkVGAAQABAAAAEwABQAEAEZvcm0BAAoAZnJtUmVxdWVz
+dAoCBQAFAFR5cGVUAAEABQBBZEhvYwAKAhwCBQAHAEFjdGl2ZVQAAQABADEACgIcAgMABwASAAwA
+CUwxUzRTNVM4UzlT
+</formula></item>
+<item name='$Collation' summary='true'>
+<rawitemdata type='2'>
+BgAAAABE
+</rawitemdata></item>
+<item name='$ViewFormat' summary='true' sign='true'>
+<rawitemdata type='5'>
+AQABAAEACAAAAFZDAAACAAEACgAKAFAAAQAACgAAAAAAAAAAAAICAAAAJDAjCgAAAAgAkgADAAEF
+AQAEAH9BMP8mAAEAAAABAQAJAQAACgEBDgoAAAEArSsBAAEAAQAAAAAAAAAAAFdDAQEACQAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAP//AAAAAAAAAAAAAAAAAABCAAAAAAABAP///wAFAP///wABAAAA
+AAAAAAAAAAAAAAEA////AAEA////AAAAAQAAAAAAAQAAAAAAAQAAAAAAAAAIAAAAAAABAA==
+</rawitemdata></item>
+<item name='$Comment' sign='true'><text/></item>
+<item name='$DesignerVersion' sign='true'><text>8.5.3</text></item>
+<item name='$Flags'><text>Y</text></item></note>
+

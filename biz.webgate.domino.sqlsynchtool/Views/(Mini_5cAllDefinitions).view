@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE note SYSTEM 'xmlschemas/domino_8_5_3.dtd'>
+<note class='view' xmlns='http://www.lotus.com/dxl' version='8.5' maintenanceversion='3.0'
+ replicaid='C1257A93006B892F'>
+<noteinfo noteid='4b6' unid='DB9992308979D325C1257A13002E1188' sequence='8'>
+<created><datetime dst='true'>20120604T102311,44+02</datetime></created>
+<modified><datetime dst='true'>20121010T221645,94+02</datetime></modified>
+<revised><datetime dst='true'>20121010T221645,93+02</datetime></revised>
+<lastaccessed><datetime dst='true'>20121010T221645,94+02</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20121010T214713,96+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Christian Guedemann/O=WGC/C=CH</name><name>CN=Consultant WebGate/O=CARNET</name><name
+>CN=chzrhdrs01/OU=ch/O=poyry-directory</name><name>CN=Christian Guedemann/O=WGC/C=CH</name></updatedby>
+<wassignedby><name>CN=Christian Guedemann/O=WGC/C=CH</name></wassignedby>
+<item name='$FormulaClass' sign='true'><text>1</text></item>
+<item name='$TITLE' sign='true'><text>(Mini\AllDefinitions)|miniAllDefinitions</text></item>
+<item name='$Index' sign='true'><text/></item>
+<item name='$Formula' summary='true' sign='true'><formula compiled='true'>
+TgAFACQAHwADAAgACQAEAEpvYk5hbWVUJENvbmZsaWN0JFJFRgAEAAQAAAAaAAUABABGb3JtAQAG
+AGZybUpvYgoCAwAHAAoABAAJTDFT
+</formula></item>
+<item name='$Collation' summary='true'>
+<rawitemdata type='2'>
+FQABAABEgGYAAAAIAEpvYk5hbWVU
+</rawitemdata></item>
+<item name='$ViewFormat' summary='true' sign='true'>
+<rawitemdata type='5'>
+AQABAAQACAAAAFZDAQAIAAcAAAAAAJgAAQAACgAAAAAAAAAAAAICAAAASm9iTmFtZVRKb2JOYW1l
+JgABAAAAAQEACQEAAAoBAQ4KAAABAK0rAQABAAEAAAAAAAAAAABXQwEBAAkAAAAAAAAAAAAAAAAA
+AAAAAAAEAAAAAAD//wAAAAAAAAAAAAAAAAAAQgAAAAAAAQD///8ABQD///8AAQAAAAAAAAAAAAAA
+AAABAP///wABAP///wAAAAEAAAAAAAEAAAAAAAEAAAAAAAAACAAAAAAAAQA=
+</rawitemdata></item>
+<item name='$Comment' sign='true'><text/></item>
+<item name='$Flags'><text>Y</text></item>
+<item name='$DesignerVersion' sign='true'><text>8.5.3</text></item></note>
+

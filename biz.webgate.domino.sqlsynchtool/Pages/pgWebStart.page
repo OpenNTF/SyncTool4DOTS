@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE note SYSTEM 'xmlschemas/domino_8_5_3.dtd'>
+<note class='form' xmlns='http://www.lotus.com/dxl' version='8.5' maintenanceversion='3.0'
+ replicaid='C1257A93006B892F'>
+<noteinfo noteid='592' unid='CFE4C6722AD09D8DC12579C40028512A' sequence='4'>
+<created><datetime>20120317T082022,18+01</datetime></created>
+<modified><datetime dst='true'>20121010T221645,28+02</datetime></modified>
+<revised><datetime dst='true'>20121010T221645,27+02</datetime></revised>
+<lastaccessed><datetime dst='true'>20121010T221645,28+02</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20121010T214716,20+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Christian Guedemann/O=WGC/C=CH</name><name>CN=Consultant WebGate/O=CARNET</name><name
+>CN=chzrhdrs01/OU=ch/O=poyry-directory</name><name>CN=Christian Guedemann/O=WGC/C=CH</name></updatedby>
+<wassignedby><name>CN=Christian Guedemann/O=WGC/C=CH</name></wassignedby>
+<item name='OriginalModTime' sign='true'><datetime>20080109T144304,89+01</datetime></item>
+<item name='$HTMLCode' sign='true'>
+<rawitemdata type='1'>
+X/8QAAIADwAHAAAAAAAAAA==
+</rawitemdata></item>
+<item name='$TITLE'><text>pgWebStart</text></item>
+<item name='$Info' sign='true'>
+<rawitemdata type='1'>
+hhgBAIAAAAAAgAAAAQABAP///wAQAAAA
+</rawitemdata></item>
+<item name='$WindowTitle' sign='true'><formula>@DbTitle</formula></item>
+<item name='$HTMLHeadTag' sign='true'><formula>"&lt;meta http-equiv=\"refresh\" content=\"0; url=/" +@WebDbName  +"/xpHome.xsp\"&gt;&lt;META HTTP-EQUIV=\"PRAGMA\" content=\"NO-CACHE\"&gt;" +
+"&lt;style&gt;a { text-decoration: none; color: #00aaa0; }&lt;/style&gt;"</formula></item>
+<item name='$Flags'><text>C34WQ</text></item>
+<item name='$DesignerVersion' sign='true'><text>8.5.3</text></item>
+<item name='$Fonts'>
+<rawitemdata type='1'>
+i/8oAAEABSZWZXJkYW5hAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==
+</rawitemdata></item>
+<item name='$$ScriptName' summary='false' sign='true'><text>pgWebStart</text></item>
+<item name='$Body' sign='true'>
+<rawitemdata type='1'>
+gQKC/1oAAQAAAAAAAAAAAKAFAACgBQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAABAAAAAJSHAAAAAAAAAAAAAAAAAQAAAAQAAACDBAEAhf8IAAUAAAjdBgAArf+p/2AA
+AQAYAAQAVABUAAoABAAAAD4AAQALAFs8YSBocmVmPSIvAPsAMAEiAgEAGwAveHBIb21lLnhzcCI+
+TG9hZGluZy4uPC9hPl0AIgIDAAcAEAAJAAkxUzJTM1MyRQCF/wgABQAACKoC3gYAAK4Ahf8IAAEC
+AAo=
+</rawitemdata></item></note>
+

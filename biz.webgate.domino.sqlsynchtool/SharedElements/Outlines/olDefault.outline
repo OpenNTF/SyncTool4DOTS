@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE note SYSTEM 'xmlschemas/domino_8_5_3.dtd'>
+<note class='filter' xmlns='http://www.lotus.com/dxl' version='8.5' maintenanceversion='3.0'
+ replicaid='C1257A93006B892F'>
+<noteinfo noteid='1de' unid='8B6555E53A2F31B6C1257A93006B8AA0' sequence='4'>
+<created><datetime dst='true'>20121010T213438,40+02</datetime></created>
+<modified><datetime dst='true'>20121010T221647,10+02</datetime></modified>
+<revised><datetime dst='true'>20121010T221647,09+02</datetime></revised>
+<lastaccessed><datetime dst='true'>20121010T221647,10+02</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20121010T213438,59+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Christian Guedemann/O=WGC/C=CH</name><name>CN=Consultant WebGate/O=CARNET</name><name
+>CN=chzrhdrs01/OU=ch/O=poyry-directory</name><name>CN=Christian Guedemann/O=WGC/C=CH</name></updatedby>
+<wassignedby><name>CN=Christian Guedemann/O=WGC/C=CH</name></wassignedby>
+<item name='$PublicAccess' sign='true'><text>1</text></item>
+<item name='$SiteMapList' sign='true'>
+<rawitemdata type='1a'>
+AQYBAAEABABIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAEAEgAPABACQAAAgAAAAAAAAAOAAAAAAAAAC4AAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFQ29ubmVjdGlvbnMAAQD2/ysAAAAA
+AAMAEwAJAAAAAAAAAAAAAAAAAAAAAAAAAAAAdmlld3MuZ2lmP0gAcAABCAIAZQAAAAAAAQAKAAAA
+OAAAAC4AAAAAAAAAAAAAAAAAAwACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFQnkg
+TmFtZQABAPb/NQAAAAAAAwACABMAAAAAAAAAAAAAAAAAAAAAAAAAAAB2d0Nvbm5lY3Rpb25zQnlO
+YW1lPwEA9v8rAAAAAAADABMACQAAAAAAAAAAAAAAAAAAAAAAAAAAAHZpZXdzLmdpZj9IADUAQAkC
+AHAAAAAAAAAABwAAAAAAAAAuAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAABUpvYnMAAQD2/ysAAAAAAAMAEwAJAAAAAAAAAAAAAAAAAAAAAAAAAAAAdmlld3Mu
+Z2lmP0gAcAABCAIAcQAAAAAAAQAKAAAAOAAAAC4AAAAAAAAAAAAAAAAAAwACAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAFQnkgTmFtZQABAPb/NQAAAAAAAwACABMAAAAAAAAAAAAAAAAA
+AAAAAAAAAAB2d0Nvbm5lY3Rpb25zQnlOYW1lPwEA9v8rAAAAAAADABMACQAAAAAAAAAAAAAAAAAA
+AAAAAAAAAHZpZXdzLmdpZj8=
+</rawitemdata></item>
+<item name='$TITLE'><text>olDefault</text></item>
+<item name='$Flags'><text>m</text></item>
+<item name='$DesignerVersion' sign='true'><text>8.5.3</text></item>
+<item name='$POID'><datetime dst='true'>20120924T142106,06+02</datetime></item></note>
+

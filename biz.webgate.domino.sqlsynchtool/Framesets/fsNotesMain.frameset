@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE note SYSTEM 'xmlschemas/domino_8_5_3.dtd'>
+<note class='form' xmlns='http://www.lotus.com/dxl' version='8.5' maintenanceversion='3.0'
+ replicaid='C1257A93006B892F'>
+<noteinfo noteid='54a' unid='EE29010AD2F0D245C12579C40028514E' sequence='6'>
+<created><datetime>20120317T082022,54+01</datetime></created>
+<modified><datetime dst='true'>20121010T221646,22+02</datetime></modified>
+<revised><datetime dst='true'>20121010T221646,21+02</datetime></revised>
+<lastaccessed><datetime dst='true'>20121010T221646,22+02</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20121010T214715,36+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Christian Guedemann/O=WGC/C=CH</name><name>CN=Consultant WebGate/O=CARNET</name><name
+>CN=chzrhdrs01/OU=ch/O=poyry-directory</name><name>CN=Christian Guedemann/O=WGC/C=CH</name></updatedby>
+<wassignedby><name>CN=Christian Guedemann/O=WGC/C=CH</name></wassignedby>
+<item name='$TITLE' sign='true'><text>fsNotesMain</text></item>
+<item name='$WindowTitle' sign='true'><formula>@DbTitle</formula></item>
+<item name='$Comment' sign='true'><text/></item>
+<item name='$FrameSet' sign='true'>
+<rawitemdata type='1'>
+7/8YAAIAAwAAAAAAAAAAAAAAAAAAAAAA8P8+AEUAAAAAAAAAAAAAAAAAAAAAAAUAAAAAAAUAAAAA
+AAEAAgAAAAAAAQCwwNAAAAADAAEAAQDvAAIAZADx/zcAEQAAAABAAAECAAEAAQAAAAAAAwAAAAAA
+AQCwwNAAAABuYXYBAP///2QBAAAKAQAAAABkP/b/KgAAAAAAAwAHAAgAAAAAAAAAAAAAAAAAAAAA
+AAAAAABwZ0ZTOE5hdvH/OAARAQAAAEAAAQMAAQABAAAAAAAEAAAAAAABALDA0AAAAG1haW4BAP//
+/2QBAAAKAQAAAABk9v9lAAAAAAADAAIAEwARAB8AAAAAAAAAAABDR1VfU1JWL1dHQ0RFVi9DSERl
+dmVsb3BtZW50XENsb3VkQXBwc1xteXNxbC5uc2YAAAAAAAAAAHZ3Q29ubmVjdGlvbnNCeVR5cGU/
+</rawitemdata></item>
+<item name='$Flags'><text>#34CQ</text></item>
+<item name='$DesignerVersion' sign='true'><text>8.5.3</text></item></note>
+

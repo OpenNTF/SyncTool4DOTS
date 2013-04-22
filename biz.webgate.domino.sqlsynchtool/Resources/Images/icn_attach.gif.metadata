@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="3.0" replicaid="C1257A93006B892F" version="8.5" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="6fa" sequence="5" unid="0DF0ABE8DBF3A94AC12579C400285072">
+<created><datetime>20120317T082020,34+01</datetime></created>
+<modified><datetime dst="true">20121010T215240,83+02</datetime></modified>
+<revised><datetime dst="true">20120924T142105,72+02</datetime></revised>
+<lastaccessed><datetime dst="true">20121010T215240,83+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20121010T215240,83+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Christian Guedemann/O=WGC/C=CH</name><name>CN=Consultant WebGate/O=CARNET</name><name>CN=CNAppl01/O=CARNET</name><name>CN=chzrhdrs01/OU=ch/O=poyry-directory</name></updatedby>
+<wassignedby><name>CN=chzrhdrs01/OU=ch/O=poyry-directory</name></wassignedby>
+<item name="$FlagsExt" sign="true"><text>D</text></item>
+<item name="$ImagesWide" sign="true"><number>1</number></item>
+<item name="$ImagesHigh" sign="true"><number>1</number></item>
+<item name="$ImagesColorize" sign="true"><number>0</number></item>
+<item name="$FileModDT" sign="true"><datetime>20110216T125620,54+01</datetime></item>
+<item name="$ImageNames" sign="true"><text>attach.gif</text></item>
+<item name="$TITLE" sign="true"><textlist><text>icn_attach.gif</text><text>Icon5</text></textlist></item>
+<item name="$DesignerVersion" sign="true"><text>8.5.3</text></item>
+
+
+<item name="$Flags"><text>34CiQ</text></item></note>

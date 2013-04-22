@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="3.0" replicaid="C1257A93006B892F" version="8.5" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="5e6" sequence="4" unid="56455C225E91CC22C12579C400285027">
+<created><datetime>20120317T082019,59+01</datetime></created>
+<modified><datetime dst="true">20121010T214717,04+02</datetime></modified>
+<revised><datetime dst="true">20120924T142104,40+02</datetime></revised>
+<lastaccessed><datetime dst="true">20121010T214717,04+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20121010T214717,04+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Christian Guedemann/O=WGC/C=CH</name><name>CN=Consultant WebGate/O=CARNET</name><name>CN=chzrhdrs01/OU=ch/O=poyry-directory</name></updatedby>
+<item name="$Flags"><text>34CiQ</text></item>
+<item name="$FlagsExt" sign="true"><text>D</text></item>
+<item name="$ImagesWide" sign="true"><number>1</number></item>
+<item name="$ImagesHigh" sign="true"><number>1</number></item>
+<item name="$ImagesColorize" sign="true"><number>0</number></item>
+<item name="$FileModDT" sign="true"><datetime>20070213T215526,43+01</datetime></item>
+<item name="$ImageNames" sign="true"><text>n8blank1.gif</text></item>
+<item name="$TITLE" sign="true"><text>webgate_ND8_blank1.gif</text></item>
+<item name="$DesignerVersion" sign="true"><text>8.5.3</text></item>
+
+</note>

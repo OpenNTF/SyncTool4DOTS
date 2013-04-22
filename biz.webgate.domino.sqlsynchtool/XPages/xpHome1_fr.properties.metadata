@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="3.0" replicaid="C12579C400284D59" version="8.5" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="16a" sequence="3" unid="AF99DCE1CC2F2086C12579C400284E20">
+<created><datetime>20120317T082014,40+01</datetime></created>
+<modified><datetime>20120317T082014,54+01</datetime></modified>
+<revised><datetime>20120317T082014,53+01</datetime></revised>
+<lastaccessed><datetime>20120317T082014,54+01</datetime></lastaccessed>
+<addedtofile><datetime>20120317T082014,50+01</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Christian Guedemann/O=WGC/C=CH</name></updatedby>
+<wassignedby><name>CN=Christian Guedemann/O=WGC/C=CH</name></wassignedby>
+<item name="$Flags"><text>gC~4K2</text></item>
+<item name="$TITLE"><text>xpHome1_fr.properties</text></item>
+
+
+<item name="$FileNames" sign="true"><text>xpHome1_fr.properties</text></item></note>

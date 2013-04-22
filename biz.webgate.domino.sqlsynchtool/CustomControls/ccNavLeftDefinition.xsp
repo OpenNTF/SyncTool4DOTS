@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xe="http://www.ibm.com/xsp/coreex">
+	<xe:navigator id="outline">
+		<xe:this.treeNodes>
+			<xe:pageTreeNode page="/DefinitionOverview.xsp" label="Home"
+				selection="/Definition/Overview">
+			</xe:pageTreeNode>
+			<xe:separatorTreeNode></xe:separatorTreeNode>
+			<xe:pageTreeNode page="/DefinitionConnections.xsp"
+				label="Connections" selection="/Definition/Connections">
+			</xe:pageTreeNode>
+			<xe:pageTreeNode page="/DefinitionJobs.xsp" label="Jobs"
+				selection="/Definition/Jobs">
+			</xe:pageTreeNode>
+		</xe:this.treeNodes>
+	</xe:navigator>
+</xp:view>

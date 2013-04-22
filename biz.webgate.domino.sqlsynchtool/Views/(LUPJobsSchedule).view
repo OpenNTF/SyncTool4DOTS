@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE note SYSTEM 'xmlschemas/domino_8_5_3.dtd'>
+<note class='view' xmlns='http://www.lotus.com/dxl' version='8.5' maintenanceversion='3.0'
+ replicaid='C1257A93006B892F'>
+<noteinfo noteid='1c2' unid='D56CFF26FF4EA8C9C1257A93006B8A77' sequence='5'>
+<created><datetime dst='true'>20121010T213437,99+02</datetime></created>
+<modified><datetime dst='true'>20121010T221646,48+02</datetime></modified>
+<revised><datetime dst='true'>20121010T221646,47+02</datetime></revised>
+<lastaccessed><datetime dst='true'>20121010T221646,48+02</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20121010T213438,31+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Consultant WebGate/O=CARNET</name><name>CN=chzrhdrs01/OU=ch/O=poyry-directory</name><name
+>CN=Christian Guedemann/O=WGC/C=CH</name></updatedby>
+<wassignedby><name>CN=Christian Guedemann/O=WGC/C=CH</name></wassignedby>
+<item name='$FormulaClass' sign='true'><text>1</text></item>
+<item name='$TITLE' sign='true'><text>(LUPJobsSchedule)|LUPJobsSchedule</text></item>
+<item name='$Index' sign='true'><text/></item>
+<item name='$Formula' summary='true' sign='true'><formula compiled='true'>
+SgICAAwAAgAkM2kAAwABACwADgBfRGF0ZQC/W3sAz3klAAUADwBFeGVjdXRpb25EYXRlRFQASwED
+AAEALAAOAF9UaW1lAMBbewDPeSUABQAPAEV4ZWN1dGlvblRpbWVEVABMAQMAAgB6AAIAJDIFAA4A
+X0RBdGUAv1t7AM95JQBOAQUADgBfRGF0ZQC/W3sAz3klAE8BBQAOAF9EYXRlAL9bewDPeSUAUAEF
+AA4AX3RpbWUAwFt7AM95JQBRAQUADgBfVGltZQDAW3sAz3klAFIBAAAAAAAAAAAAAEsGAwAFACIA
+HQAEAAIAAgAJAAQAJDMkMiRDb25mbGljdCRSRUYABAAEAAEAJAAFAF9EYXRlAAUADwBFeGVjdXRp
+b25EYXRlRFQASwEDAAcADAAFAAkxUzJTAAEAJAAFAF9UaW1lAAUADwBFeGVjdXRpb25UaW1lRFQA
+TAEDAAcADgAHAAkwUjFTMlMAAQBaAAkAX0N1cmVEYXRlAAUABQBfREF0ZQBOAQUABQBfRGF0ZQBP
+AQUABQBfRGF0ZQBQAQUABQBfdGltZQBRAQUABQBfVGltZQBSAQAAAAAAAAAAAABLBgMABwAMAAYA
+CTBSUjFTAABeAAUABABGb3JtAQAKAGZybVJlcXVlc3QKAgUABQBUeXBlVAABAAMASm9iAAoCHAIF
+AAkAX0N1cmVEYXRlACwADgIcAgUABwBBY3RpdmVUAAEAAQAxAAoCHAIDAAcAHgAYAAkwUlJMMVM0
+UzVTOFM5UzExUzEyUzEzUw==
+</formula></item>
+<item name='$FormulaTV' sign='true'><text/></item>
+<item name='$Collation' summary='true'>
+<rawitemdata type='2'>
+DwABAABEAGYAAAACACQz
+</rawitemdata></item>
+<item name='$ViewFormat' summary='true' sign='true'>
+<rawitemdata type='5'>
+AQACAAQACAAAAFZDAQACAAEADgAAAHQAAQAACgAAAAAAAAAAAAICAAAAVkMAAAIAAAD4AAAAggEB
+AAAKAAAAAAAAAAAAAgIAAAAkMyMOAAIADAACACQzaQADACQy+AABACwADgBfRGF0ZQC/W3sAz3kl
+AAUADwBFeGVjdXRpb25EYXRlRFQASwEDAAcADAAFAAkxUzJTAAEALAAOAF9UaW1lAMBbewDPeSUA
+BQAPAEV4ZWN1dGlvblRpbWVEVABMAQMABwAOAAcACTBSMVMyUwACAHoAAgAkMgUADgBfREF0ZQC/
+W3sAz3klAE4BBQAOAF9EYXRlAL9bewDPeSUATwEFAA4AX0RhdGUAv1t7AM95JQBQAQUADgBfdGlt
+ZQDAW3sAz3klAFEBBQAOAF9UaW1lAMBbewDPeSUAUgEAAAAAAAAAAAAASwYDAAcACgAEAAkwUlIm
+AAEAAAABAQAJAQAACgEBDgoAAAEArSsBAAEAAQAAAAAAAAAAAFdDAQEACQAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAP//AAAAAAAAAAAAAAAAAABXQwEBAAkAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAD/
+/wAAAAAAAAAAAAAAAAAAQgAAAAAAAQD///8ABQD///8AAQAAAAAAAAAAAAAAAAABAP///wABAP//
+/wAAAAEAAAAAAAEAAAAAAAEAAAAAAAAACAAAAAAAAQA=
+</rawitemdata></item>
+<item name='$Comment' sign='true'><text/></item>
+<item name='$DesignerVersion' sign='true'><text>8.5.3</text></item>
+<item name='$Flags'><text>Y</text></item></note>
+

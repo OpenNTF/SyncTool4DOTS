@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE note SYSTEM 'xmlschemas/domino_8_5_3.dtd'>
+<note default='true' class='icon' xmlns='http://www.lotus.com/dxl' version='8.5'
+ maintenanceversion='3.0' replicaid='C1257A93006B892F'>
+<noteinfo noteid='11a' unid='2A8A215BCFA63C93C1257A93006B8934' sequence='21'>
+<created><datetime dst='true'>20121010T213434,76+02</datetime></created>
+<modified><datetime dst='true'>20121010T221647,26+02</datetime></modified>
+<revised><datetime dst='true'>20121010T221647,25+02</datetime></revised>
+<lastaccessed><datetime dst='true'>20121010T221647,26+02</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20121010T213434,79+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Christian Guedemann/O=WGC/C=CH</name></updatedby>
+<wassignedby><name>CN=Christian Guedemann/O=WGC/C=CH</name></wassignedby>
+<item name='IconBitmap' summary='true' sign='true'>
+<rawitemdata type='6'>
+AiAgAQAA//4////wB///wAH//4AA//4AAD/8AAAf+AAAH/gAAA/4AAAP+AAAD/gAAA/4AAAP+AAA
+B/gAAAfgAAAHwAAAAYAAAAGAAAAAgAAAAIAAAAHAAAABwAAAA/4AAB/8AAAf/AAAH/gYCB/4CAAf
++BAAH/wQDD/+PD4///////////8AAAAAAAAADu8AAAAAAAAAAAAAAAAA5/73vvAAAAAAAAAAAAAA
+5773v+9+8AAAAAAAAAAAD3/37+t/u38AAAAAAAAAD+vr775/7+7/7wAAAAAAAPzH/3/yz77/fMzw
+AAAAAA8sLP//zCz/f8LC8AAAAAAPwsLP/MLCzx8sLM8AAAAAD8wsz/zMLM/8wsLPAAAAAAwszC/8
+YsbP/GwsLwAAAAAMxibP/CZiz/zGxs8AAAAADGJiz/zyZs/8YmLPAAAAAAxmZs8f9m/P/GZmz/AA
+AAAPZibP/PZvz/8mZs/wAAAP/GZvzx9mb8/8ZmbP8AAA/PxmZs8f/29vH2ZmYszwDyb29mZvHPb/
+zx/2//Ys8AL2/2/2wR8v9sEcZvb/Zs8Cb29vb88cZv/PFv9vb/LPDPb2/ybBH2JiwRwv8m9vwADM
+8vby8fHPbyH89ib2b8AA/8wszBEfHCwREc/MLM8AAAAAD/Ef8fERHx8f//AAAAAAAP//ERH///H/
+///wAAAAAADMzPERzMzx/8zM8AAAAAAPZiYgDyYs/w/CwsAAAAAAD8IsLw9iYs//JizAAAAAAA9v
+YvD2b2z//29i8AAAAAAA9szw/2bM/wD2zAAAAAAAAA//AAD//wAAD/8AAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAA==
+</rawitemdata></item>
+<item name='$DBTheme' sign='true'><text>blue.theme</text></item>
+<item name='$DefaultWebLaunchPage' sign='true'><text>pgWebStart</text></item>
+<item name='$DefaultFrameset' sign='true'><text>fsNotesMain</text></item>
+<item name='$DefaultXPage' sign='true'><text>DefinitionOverview.xsp</text></item>
+<item name='$FlagsNoRefresh' sign='true'><text>rv</text></item>
+<item name='$TemplateModTime' sign='true'><datetime dst='true'>20121010T214237,53+02</datetime></item>
+<item name='$TemplateServerName' sign='true'><text>CN=Christian Guedemann/O=WGC/C=CH</text></item>
+<item name='$TemplateFileName' sign='true'><text>c:\Program Files\IBM\Lotus\Notes\Data\mysql.nsf\mysql.nsf</text></item>
+<item name='$Daos' sign='true'><text>0</text></item>
+<item name='$Flags'><text>Jz7F!</text></item>
+<item name='$PIRCRefreshModTime' sign='true'><datetime dst='true'>20121010T215240,50+02</datetime></item>
+<item name='$TITLE'><text>mySQL Synch Tool
+#1myWebGate.SQLSYNC</text></item></note>
+

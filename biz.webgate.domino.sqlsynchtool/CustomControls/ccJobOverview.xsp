@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xe="http://www.ibm.com/xsp/coreex">
+
+	<xe:dataView id="dataView1" openDocAsReadonly="true"
+		pageName="/JobDocument.xsp" var="veJob"><xp:this.facets><xp:pager layout="Previous Group Next" partialRefresh="true" id="pager1" xp:key="pagerTopRight" partialExecute="true"></xp:pager></xp:this.facets>
+		<xe:this.data>
+			<xp:dominoView var="viwJobs" viewName="JobDefinitions"></xp:dominoView>
+		</xe:this.data>
+		<xe:this.summaryColumn>
+			<xe:viewSummaryColumn columnName="JobName">
+			</xe:viewSummaryColumn>
+		</xe:this.summaryColumn>
+	</xe:dataView></xp:view>

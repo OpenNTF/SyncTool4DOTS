@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE note SYSTEM 'xmlschemas/domino_8_5_3.dtd'>
+<note class='filter' xmlns='http://www.lotus.com/dxl' version='8.5' maintenanceversion='3.0'
+ replicaid='C1257A93006B892F'>
+<noteinfo noteid='162' unid='4D3C779539705E04C1257A93006B8A18' sequence='4'>
+<created><datetime dst='true'>20121010T213437,04+02</datetime></created>
+<modified><datetime dst='true'>20121010T221647,34+02</datetime></modified>
+<revised><datetime dst='true'>20121010T221647,33+02</datetime></revised>
+<lastaccessed><datetime dst='true'>20121010T221647,34+02</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20121010T213437,05+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Christian Guedemann/O=WGC/C=CH</name><name>CN=Consultant WebGate/O=CARNET</name><name
+>CN=chzrhdrs01/OU=ch/O=poyry-directory</name><name>CN=Christian Guedemann/O=WGC/C=CH</name></updatedby>
+<wassignedby><name>CN=Christian Guedemann/O=WGC/C=CH</name></wassignedby>
+<item name='$TITLE' sign='true'><text>Database Script</text></item>
+<item name='$Flags'><text>t34Q</text></item>
+<item name='$PublicAccess' sign='true'><text>1</text></item>
+<item name='$DesignerVersion' sign='true'><text>8.5.3</text></item>
+<item name='$POID'><datetime dst='true'>20120924T142105,98+02</datetime></item></note>
+

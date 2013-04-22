@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="3.0" replicaid="C1257A93006B892F" version="8.5" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="4fe" sequence="7" unid="7D5F7B80FDA5BAD4C12579C400285183">
+<created><datetime>20120317T082023,07+01</datetime></created>
+<modified><datetime dst="true">20121010T214714,60+02</datetime></modified>
+<revised><datetime dst="true">20120924T142104,72+02</datetime></revised>
+<lastaccessed><datetime dst="true">20121010T214714,60+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20121010T214714,60+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Christian Guedemann/O=WGC/C=CH</name><name>CN=Consultant WebGate/O=CARNET</name><name>CN=chzrhdrs01/OU=ch/O=poyry-directory</name></updatedby>
+<item name="$Flags"><text>gC~4;</text></item>
+<item name="$TITLE" sign="true"><text>ccNavLeftDefinition.xsp</text></item>
+
+
+
+
+<item name="$FileNames" sign="true"><text>ccNavLeftDefinition.xsp</text></item>
+<item name="$DesignerVersion" sign="true"><text>8.5</text></item>
+
+
+
+
+</note>

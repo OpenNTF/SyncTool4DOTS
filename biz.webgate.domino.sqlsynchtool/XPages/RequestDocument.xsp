@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xc="http://www.ibm.com/xsp/custom"
+	xmlns:xe="http://www.ibm.com/xsp/coreex">
+
+	<xp:this.data>
+		<xp:dominoDocument var="docRequest" formName="frmRequest"
+			action="openDocument">
+		</xp:dominoDocument>
+	</xp:this.data>
+	<xc:ccApplication navigationPath="/Operation/Document/Request"
+		autoRemove="false">
+		<xp:panel>
+			<xe:widgetContainer id="wicRequest">
+				<xp:table>
+					<xp:tr>
+						<xp:td style="font-weight:bold">
+							Pland
+							<xp:span style="font-weight:bold"></xp:span>
+							ates
+						</xp:td>
+						<xp:td></xp:td>
+						<xp:td style="font-weight:bold">Running</xp:td>
+						<xp:td></xp:td>
+					</xp:tr>
+					<xp:tr>
+						<xp:td>
+							<xp:label value="Jobname" id="label1"></xp:label>
+						</xp:td>
+						<xp:td>
+							<xp:text escape="true"
+								id="cfJobName" value="#{docRequest.JobNameT}">
+							</xp:text></xp:td>
+						<xp:td></xp:td>
+						<xp:td></xp:td>
+					</xp:tr>
+					<xp:tr>
+						<xp:td>
+							<xp:label value="Job ID" id="label2"></xp:label>
+						</xp:td>
+						<xp:td>
+							<xp:text escape="true" id="cfJobId" value="#{docRequest.JobIDT}"></xp:text></xp:td>
+						<xp:td></xp:td>
+						<xp:td></xp:td>
+					</xp:tr>
+					<xp:tr>
+						<xp:td>
+							<xp:label value="Startdate" id="label3"></xp:label>
+						</xp:td>
+						<xp:td>
+							<xp:text escape="true"
+								id="cfEDate" value="#{docRequest.ExecutionDateDT}">
+							<xp:this.converter><xp:convertDateTime type="date" dateStyle="short"></xp:convertDateTime></xp:this.converter></xp:text>
+							
+							&#160;
+							<xp:text escape="true" id="cfETime" value="#{docRequest.ExecutionTimeDT}"><xp:this.converter><xp:convertDateTime type="time" timeStyle="short"></xp:convertDateTime></xp:this.converter></xp:text></xp:td>
+						<xp:td>
+							<xp:label value="Startdate" id="label4"></xp:label>
+						</xp:td>
+						<xp:td>
+							<xp:text escape="true" id="cfRunningStart" value="#{docRequest.StartDT}"><xp:this.converter><xp:convertDateTime type="both" dateStyle="short"></xp:convertDateTime></xp:this.converter></xp:text></xp:td>
+					</xp:tr>
+					<xp:tr>
+						<xp:td></xp:td>
+						<xp:td></xp:td>
+						<xp:td>
+							<xp:label value="Enddate" id="label5"></xp:label>
+						</xp:td>
+						<xp:td>
+							<xp:text escape="true" id="cfRunningEnd" value="#{docRequest.JobFinishedDT}"><xp:this.converter><xp:convertDateTime type="both" dateStyle="short"></xp:convertDateTime></xp:this.converter></xp:text></xp:td>
+					</xp:tr>
+					<xp:tr>
+						<xp:td></xp:td>
+						<xp:td></xp:td>
+						<xp:td>
+							
+						</xp:td>
+						<xp:td></xp:td>
+					</xp:tr>
+					<xp:tr>
+						<xp:td>
+							<xp:label value="New" id="label6"></xp:label></xp:td>
+						<xp:td>
+							<xp:inputText id="itNew" value="#{docRequest.NewRecordsN}" readonly="true"><xp:this.converter>
+	<xp:convertNumber type="number" integerOnly="true"></xp:convertNumber></xp:this.converter></xp:inputText></xp:td>
+						<xp:td></xp:td>
+						<xp:td></xp:td>
+					</xp:tr>
+					<xp:tr>
+						<xp:td>
+							<xp:label value="Modified" id="label7"></xp:label></xp:td>
+						<xp:td>
+							<xp:inputText id="itModified" value="#{docRequest.ModifiedRecordsN}" readonly="true"><xp:this.converter>
+	<xp:convertNumber type="number"></xp:convertNumber></xp:this.converter></xp:inputText></xp:td>
+						<xp:td></xp:td>
+						<xp:td></xp:td>
+					</xp:tr>
+					<xp:tr>
+						<xp:td>
+							<xp:label value="Total" id="label8"></xp:label></xp:td>
+						<xp:td>
+							<xp:inputText id="itTotal" value="#{docRequest.TotalRecordsN}" readonly="true"><xp:this.converter>
+	<xp:convertNumber type="number"></xp:convertNumber></xp:this.converter></xp:inputText></xp:td>
+						<xp:td></xp:td>
+						<xp:td></xp:td>
+					</xp:tr>
+				</xp:table>
+				<xe:this.titleBarText><![CDATA[#{javascript:docRequest.getItemValue(" JobNameT") + " - "+ docRequest.getItemValueDateTime("ExecutionDateDT").getDateOnly() +" / "+docRequest.getItemValueDateTime("ExecutionTimeDT").getTimeOnly();;}]]></xe:this.titleBarText>
+			</xe:widgetContainer>
+			<xp:br></xp:br>
+			<xe:djTabContainer id="djTabContainer1"
+				style="height:500.0px;width:100.0%">
+				<xe:djTabPane id="djTabPane3" title="Report">
+					<xp:panel>
+						<xp:inputRichText readonly="true" id="rtReport" value="#{docRequest.reportRT}"></xp:inputRichText></xp:panel></xe:djTabPane>
+				<xe:djTabPane id="djTabPane2" title="Changelog">
+					<xe:dataView id="dataView2" var="cRow" rows="20"
+						indexVar="idxRow">
+						<xp:this.facets>
+							<xp:pager layout="Previous Group Next"
+								partialRefresh="true" id="pager6" xp:key="pagerBottomRight">
+							</xp:pager>
+							<xe:pagerExpand id="pagerExpand3"
+								xp:key="pagerBottomLeft">
+							</xe:pagerExpand>
+							<xe:pagerExpand id="pagerExpand2"
+								xp:key="pagerTopLeft">
+							</xe:pagerExpand>
+							<xp:pager layout="Previous Group Next"
+								partialRefresh="true" id="pager3" xp:key="pagerTopRight">
+							</xp:pager>
+						</xp:this.facets>
+						<xe:this.data>
+							<xp:dominoView var="viwChangeLog"
+								viewName="embChangesByREF"
+								categoryFilter="#{javascript:docRequest.getDocument().getUniversalID()}">
+
+							</xp:dominoView>
+						</xe:this.data>
+						<xe:this.categoryColumn>
+							<xe:viewCategoryColumn
+								columnName="ChangeDateDTCompute">
+
+							</xe:viewCategoryColumn>
+							<xe:viewCategoryColumn
+								columnName="PrimaryKeyT">
+							</xe:viewCategoryColumn>
+						</xe:this.categoryColumn>
+						<xe:this.summaryColumn>
+							<xe:viewSummaryColumn
+								columnName="FieldNameT">
+								<xe:this.href><![CDATA[#{javascript:"ChangeLog.xsp?documentId="+cRow.getUniversalID()}]]></xe:this.href>
+							</xe:viewSummaryColumn>
+						</xe:this.summaryColumn>
+						<xe:this.extraColumns>
+
+							<xe:viewExtraColumn
+								columnName="OldValueT">
+							</xe:viewExtraColumn>
+							<xe:viewExtraColumn
+								columnName="NewValueT">
+							</xe:viewExtraColumn>
+							<xe:viewExtraColumn
+								columnName="FieldTypeT">
+							</xe:viewExtraColumn>
+							<xe:viewExtraColumn
+								columnName="TargetIDT">
+							</xe:viewExtraColumn>
+							<xe:viewExtraColumn
+								columnName="ChangeTimeDT">
+							</xe:viewExtraColumn>
+						</xe:this.extraColumns>
+					</xe:dataView></xe:djTabPane>
+				<xe:djTabPane id="djTabPane1" title="Events">
+					<xe:dataView id="dataView3" rows="20" var="eRow"
+						collapsibleRows="true" indexVar="idxRow">
+						<xp:this.facets>
+							<xp:pager layout="Previous Group Next"
+								partialRefresh="true" id="pager5" xp:key="pagerBottomRight">
+							</xp:pager>
+							<xe:pagerExpand id="pagerExpand4"
+								xp:key="pagerBottomLeft">
+							</xe:pagerExpand>
+							<xe:pagerExpand id="pagerExpand1"
+								xp:key="pagerTopLeft">
+							</xe:pagerExpand>
+							<xp:pager layout="Previous Group Next"
+								partialRefresh="true" id="pager4" xp:key="pagerTopRight">
+							</xp:pager>
+						</xp:this.facets>
+						<xe:this.data>
+							<xp:dominoView var="viwEvents"
+								viewName="embEventsByREF"
+								categoryFilter="#{javascript:docRequest.getDocument().getUniversalID()}">
+
+							</xp:dominoView>
+						</xe:this.data>
+						<xe:this.categoryColumn>
+							<xe:viewCategoryColumn
+								columnName="DateDT">
+							</xe:viewCategoryColumn>
+							<xe:viewCategoryColumn
+								columnName="EventIDN">
+							</xe:viewCategoryColumn>
+						</xe:this.categoryColumn>
+						<xe:this.summaryColumn>
+							<xe:viewSummaryColumn
+								columnName="MessageT">
+								<xe:this.href><![CDATA[#{javascript:"Event.xsp?documentId="+eRow.getUniversalID()}]]></xe:this.href>
+							</xe:viewSummaryColumn>
+						</xe:this.summaryColumn>
+						<xe:this.extraColumns>
+
+							<xe:viewExtraColumn columnName="TimeDT"></xe:viewExtraColumn>
+						</xe:this.extraColumns>
+					</xe:dataView></xe:djTabPane>
+			</xe:djTabContainer>
+		</xp:panel>
+		<xp:this.facets>
+			<xc:ccNavLeftLog xp:key="LeftColumn"></xc:ccNavLeftLog>
+		</xp:this.facets>
+	</xc:ccApplication>
+</xp:view>

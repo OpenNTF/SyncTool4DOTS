@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="3.0" replicaid="C1257A93006B892F" version="8.5" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="55e" sequence="7" unid="F848D5FD3FFCC93DC12579C500792D0C">
+<created><datetime>20120318T230333,88+01</datetime></created>
+<modified><datetime dst="true">20121010T221646,90+02</datetime></modified>
+<revised><datetime dst="true">20121010T221646,89+02</datetime></revised>
+<lastaccessed><datetime dst="true">20121010T221646,90+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20121010T214715,58+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Christian Guedemann/O=WGC/C=CH</name><name>CN=Consultant WebGate/O=CARNET</name><name>CN=chzrhdrs01/OU=ch/O=poyry-directory</name><name>CN=admin-wgc19/OU=chzrh/OU=ch/O=poyry</name><name>CN=Christian Guedemann/O=WGC/C=CH</name></updatedby>
+<wassignedby><name>CN=Christian Guedemann/O=WGC/C=CH</name></wassignedby>
+<item name="$Flags"><text>gC~4K</text></item>
+<item name="$TITLE"><text>JobDocument.xsp</text></item>
+
+
+
+<item name="$DesignerVersion" sign="true"><text>8.5.1</text></item>
+
+
+
+<item name="$FileNames" sign="true"><text>JobDocument.xsp</text></item>
+
+
+
+
+</note>

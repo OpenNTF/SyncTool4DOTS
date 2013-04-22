@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xe="http://www.ibm.com/xsp/coreex">
+	<xe:navigator id="outline">
+		<xe:this.treeNodes>
+			<xe:pageTreeNode page="/LogOverview.xsp" label="Home"
+				selection="/Log/Overview">
+			</xe:pageTreeNode>
+			<xe:separatorTreeNode></xe:separatorTreeNode>
+			<xe:pageTreeNode page="/Log.xsp" label="Logs"
+				selection="/Log/Log">
+			</xe:pageTreeNode>
+			
+		</xe:this.treeNodes>
+	</xe:navigator>
+</xp:view>

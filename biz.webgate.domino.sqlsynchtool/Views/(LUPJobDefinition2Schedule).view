@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE note SYSTEM 'xmlschemas/domino_8_5_3.dtd'>
+<note class='view' xmlns='http://www.lotus.com/dxl' version='8.5' maintenanceversion='3.0'
+ replicaid='C1257A93006B892F'>
+<noteinfo noteid='4ae' unid='7771745B051E0544C1257A19007972E3' sequence='7'>
+<created><datetime dst='true'>20120611T000632,67+02</datetime></created>
+<modified><datetime dst='true'>20121010T221646,46+02</datetime></modified>
+<revised><datetime dst='true'>20121010T221646,45+02</datetime></revised>
+<lastaccessed><datetime dst='true'>20121010T221646,46+02</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20121010T214713,90+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Christian Guedemann/O=WGC/C=CH</name><name>CN=Consultant WebGate/O=CARNET</name><name
+>CN=chzrhdrs01/OU=ch/O=poyry-directory</name><name>CN=Christian Guedemann/O=WGC/C=CH</name></updatedby>
+<wassignedby><name>CN=Christian Guedemann/O=WGC/C=CH</name></wassignedby>
+<item name='$FormulaClass' sign='true'><text>1</text></item>
+<item name='$TITLE' sign='true'><text>(LUPJobDefinition2Schedule)|LUPJobDefinition2Schedule</text></item>
+<item name='$Index' sign='true'><text/></item>
+<item name='$Formula' summary='true' sign='true'><formula compiled='true'>
+wgAFAFwAWAAGAAgAFQAVAAkACQAEAEpvYk5hbWVUU291cmNlQ29ubmVjdGlvbk5hbWVUVGFyZ2V0
+Q29ubmVjdGlvbk5hbWVUS2V5RmllbGRUJENvbmZsaWN0JFJFRgQABAAAAE4ABQAEAEZvcm0BAAYA
+ZnJtSm9iCgIFAAkAU2NoZWR1bGVUAAEABQBEQUlMWQABAAYAV0VFS0xZHwIBAAYASE9VUkxZHwIK
+AhwCAwAHABIADAAJTDFTNFM1UzZTN1M=
+</formula></item>
+<item name='$Collation' summary='true'>
+<rawitemdata type='2'>
+FQABAABEgGYAAAAIAEpvYk5hbWVU
+</rawitemdata></item>
+<item name='$ViewFormat' summary='true' sign='true'>
+<rawitemdata type='5'>
+AQAEAAQACAAAAFZDAQAIAAcAAAAAAGoAAQAACgAAAAAAAAAAAAICAAAAVkMAABUABAAAAAAAUAAB
+AAAKAAAAAAAAAAAAAgIAAABWQwAAFQACAAAAAABQAAEAAAoAAAAAAAAAAAACAgAAAFZDAAAJAAgA
+AAAAAFAAAQAACgAAAAAAAAAAAAICAAAASm9iTmFtZVRKb2JOYW1lU291cmNlQ29ubmVjdGlvbk5h
+bWVURnJvbVRhcmdldENvbm5lY3Rpb25OYW1lVFRvS2V5RmllbGRUS2V5RmllbGQmAAEAAAABAQAJ
+AQAACgEBDgoAAAEArSsBAAEAAQAAAAAAAAAAAFdDAQEACQAAAAAAAAAAAAAAAAAAAAAAAAQAAAAA
+AP//AAAAAAAAAAAAAAAAAABXQwEBAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//wAAAAAAAAAA
+AAAAAAAAV0MBAQAJAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAA//8AAAAAAAAAAAAAAAAAAFdDAQEA
+CQAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAP//AAAAAAAAAAAAAAAAAABCAAAAAAABAP///wAFAP//
+/wABAAAAAAAAAAAAAAAAAAEA////AAEA////AAAAAQAAAAAAAQAAAAAAAQAAAAAAAAAIAAAAAAAB
+AA==
+</rawitemdata></item>
+<item name='$Comment' sign='true'><text/></item>
+<item name='$Flags'><text>Y</text></item>
+<item name='$DesignerVersion' sign='true'><text>8.5.3</text></item></note>
+

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom"
+	pageTitle="#{javascript:@DbTitle()}" xmlns:xe="http://www.ibm.com/xsp/coreex">
+
+
+	<xc:ccApplication navigationDefaultPath="/Definition/Overview"
+		navigationPath="/Definition/Overview">
+		<xp:table>
+			<xp:tr>
+				<xp:td valign="top" style="width:33.0%">
+					<xe:widgetContainer id="wicAllJobs"
+						titleBarText="All active Jobs" style="width=90%">
+						<xe:dynamicViewPanel id="dynViewAll" rows="10"
+							var="docDefinition" pageName="/JobDocument.xsp"
+							customizerBean="openReadView">
+							<xe:this.data>
+								<xp:dominoView var="viwDefinitions"
+									viewName="miniAllDefinitions">
+								</xp:dominoView>
+							</xe:this.data>
+						</xe:dynamicViewPanel>
+					</xe:widgetContainer>
+				</xp:td>
+				<xp:td valign="top" style="width:33.0%">
+					<xe:widgetContainer id="webPlannedRequests"
+						titleBarText="Planned Request" style="width=90%">
+						<xe:dynamicViewPanel id="dynamicViewPanel1"
+							pageName="/RequestDocument.xsp" rows="10"
+							customizerBean="openReadView">
+							<xe:this.data>
+								<xp:dominoView var="viwOpenRequest"
+									viewName="miniOpenRequest">
+								</xp:dominoView>
+							</xe:this.data>
+						</xe:dynamicViewPanel>
+					</xe:widgetContainer>
+				</xp:td>
+				<xp:td valign="top" style="width:33.0%">
+					<xe:widgetContainer id="wicProcessRequest"
+						titleBarText="Processed Request" style="width=90%">
+						<xe:dynamicViewPanel id="dynamicViewPanel2"
+							pageName="/RequestDocument.xsp" rows="10"
+							customizerBean="openReadView">
+							<xe:this.data>
+								<xp:dominoView
+									var="viewProcessedRequest" viewName="miniProcessedRequest">
+								</xp:dominoView>
+							</xe:this.data>
+						</xe:dynamicViewPanel>
+					</xe:widgetContainer>
+				</xp:td>
+			</xp:tr>
+		</xp:table>
+		<xp:this.facets>
+			<xp:panel xp:key="LeftColumn">
+				<xc:ccNavLeftDefinition></xc:ccNavLeftDefinition>
+			</xp:panel>
+		</xp:this.facets>
+
+	</xc:ccApplication>
+</xp:view>

@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xe="http://www.ibm.com/xsp/coreex">
+
+	<xp:this.data>
+		<xp:dominoDocument var="docConnection"
+			formName="frmConnection">
+			<xp:this.postNewDocument><![CDATA[#{javascript:docConnection.replaceItemValue("conTypeT",
+facesContext.getExternalContext().getRequest().getParameter("TYPE"))}]]></xp:this.postNewDocument>
+			<xp:this.querySaveDocument><![CDATA[#{javascript:if(docConnection.isNewNote()) {
+	docConnection.replaceItemValue("conTypeT",
+	facesContext.getExternalContext().getRequest().getParameter("TYPE"));
+}
+if(docConnection.getItemValueString("conIDT") =="") {
+	docConnection.replaceItemValue("conIDT",@Unique());
+}}]]></xp:this.querySaveDocument>
+		</xp:dominoDocument>
+	</xp:this.data>
+
+	<xe:formTable id="formConnection"
+		formDescription="Connection to a System" formTitle="Connection">
+		<xp:this.facets>
+			<xp:panel xp:key="footer">
+				<xp:button value="Save" id="btSave"
+					rendered="#{javascript:docConnection.isEditable()}">
+					<xp:eventHandler event="onclick" submit="true"
+						refreshMode="complete">
+						<xp:this.action>
+
+							<xp:actionGroup>
+								<xp:saveDocument var="docConnection"></xp:saveDocument>
+								<xp:openPage
+									name="/DefinitionConnections.xsp">
+								</xp:openPage>
+							</xp:actionGroup>
+						</xp:this.action>
+					</xp:eventHandler>
+				</xp:button>
+				<xp:button id="btEdit" value="Edit"
+					rendered="#{javascript:!docConnection.isEditable()}">
+					<xp:eventHandler event="onclick" submit="true"
+						refreshMode="complete">
+						<xp:this.action>
+							<xp:changeDocumentMode mode="edit"
+								var="docConnection">
+							</xp:changeDocumentMode>
+						</xp:this.action>
+					</xp:eventHandler>
+				</xp:button>
+				<xp:link escape="true" text="Cancel" id="lnkCancel"
+					value="/DefinitionConnections.xsp">
+				</xp:link>
+			</xp:panel>
+		</xp:this.facets>
+		<xe:formRow id="formRow1" for="itconName" label="Name"
+			labelPosition="left">
+			<xp:inputText id="itconName"
+				value="#{docConnection.conNameT}" defaultValue="new Connection">
+			</xp:inputText>
+		</xe:formRow>
+		<xe:formRow id="formRow12" for="Source" label="Endpoint"
+			labelPosition="left">
+
+			<xp:radio text="Target" id="Target"
+				value="#{docConnection.conDirectionT}" groupName="Direction"
+				selectedValue="TARGET">
+			</xp:radio>
+			<xp:radio text="Source" id="Source" groupName="Direction"
+				value="#{docConnection.conDirectionT}" selectedValue="SOURCE">
+			</xp:radio>
+		</xe:formRow>
+		<xe:formRow id="formRow2" for="cbType" label="Type"
+			labelPosition="left">
+			<xp:text escape="true" id="cbType"
+				value="#{docConnection.conTypeT}">
+			</xp:text>
+		</xe:formRow>
+		<xe:formRow id="formRow3" label="Driver" labelPosition="left">
+			<xp:inputText id="itDriver"
+				value="#{docConnection.conSQLDRIVERT}">
+			</xp:inputText>
+			<xe:this.rendered><![CDATA[#{javascript:docConnection.getItemValueString("conTypeT") == "SQL"}]]></xe:this.rendered>
+		</xe:formRow>
+		<xe:formRow id="formRow4" label="Database URL"
+			labelPosition="left">
+			<xp:inputText id="itDBURL"
+				value="#{docConnection.conSQLDBURLT}">
+			</xp:inputText>
+			<xe:this.rendered><![CDATA[#{javascript:docConnection.getItemValueString("conTypeT") == "SQL"}]]></xe:this.rendered>
+
+		</xe:formRow>
+		<xe:formRow id="formRow5" label="Username">
+			<xp:inputText id="itUserName"
+				value="#{docConnection.conSQLUsernameT}">
+			</xp:inputText>
+			<xe:this.rendered><![CDATA[#{javascript:docConnection.getItemValueString("conTypeT") == "SQL"}]]></xe:this.rendered>
+		</xe:formRow>
+
+		<xe:formRow id="formRow6" label="Password">
+			<xp:inputText id="itPassword"
+				value="#{docConnection.conSQLPasswordT}">
+			</xp:inputText>
+			<xe:this.rendered><![CDATA[#{javascript:docConnection.getItemValueString("conTypeT") == "SQL"}]]></xe:this.rendered>
+		</xe:formRow>
+		<xe:formRow id="formRow7" label="Selection">
+			<xp:inputText id="itSelection"
+				value="#{docConnection.conSQLSelectionT}" style="width:300px">
+			</xp:inputText>
+			<xe:this.rendered><![CDATA[#{javascript:docConnection.getItemValueString("conTypeT") == "SQL"}]]></xe:this.rendered>
+		</xe:formRow>
+		<xe:formRow id="formRow13" label="Options (target only)">
+			<xe:this.rendered><![CDATA[#{javascript:docConnection.getItemValueString("conTypeT") == "SQL"}]]></xe:this.rendered>
+			<xp:checkBox id="checkBox1" text="create new records"
+				value="#{docConnection.conSQLCreateNewT}" checkedValue="1"
+				uncheckedValue="0">
+			</xp:checkBox></xe:formRow>
+		<xe:formRow id="formRow14" label="Keyfield Name (target onyl)">
+			<xp:inputText id="inputText2"
+				value="#{docConnection.conSQLKeyFieldT}" style="width:300px">
+			</xp:inputText>
+			<xe:this.rendered><![CDATA[#{javascript:docConnection.getItemValueString("conTypeT") == "SQL"}]]></xe:this.rendered>
+		</xe:formRow>
+		<xe:formRow id="formRow15" label="Table (target only)">
+			<xp:inputText id="inputText3"
+				value="#{docConnection.conSQLTableT}" style="width:300px">
+			</xp:inputText>
+			<xe:this.rendered><![CDATA[#{javascript:docConnection.getItemValueString("conTypeT") == "SQL"}]]></xe:this.rendered>
+		</xe:formRow>
+		<xe:formRow id="formRow8" label="Servername">
+			<xp:inputText id="itNotesServer"
+				value="#{docConnection.conNotesServerT}">
+			</xp:inputText>
+			<xe:this.rendered><![CDATA[#{javascript:docConnection.getItemValueString("conTypeT") == "Notes"}]]></xe:this.rendered>
+		</xe:formRow>
+		<xe:formRow id="formRow9" label="Database Path">
+			<xp:inputText id="itDatabasePath"
+				value="#{docConnection.conNotesDBT}">
+			</xp:inputText>
+			<xe:this.rendered><![CDATA[#{javascript:docConnection.getItemValueString("conTypeT") == "Notes"}]]></xe:this.rendered>
+		</xe:formRow>
+		<xe:formRow id="formRow10" label="Viewname">
+			<xp:inputText id="itViewName"
+				value="#{docConnection.conNotesViewT}">
+			</xp:inputText>
+			<xe:this.rendered><![CDATA[#{javascript:docConnection.getItemValueString("conTypeT") == "Notes"}]]></xe:this.rendered>
+		</xe:formRow>
+		<xe:formRow id="formRow11" label="Formname">
+			<xp:inputText id="itNotesForm"
+				value="#{docConnection.conNotesFormT}">
+			</xp:inputText>
+			<xe:this.rendered><![CDATA[#{javascript:docConnection.getItemValueString("conTypeT") == "Notes"}]]></xe:this.rendered>
+		</xe:formRow>
+		
+		
+		<xe:formRow id="formRow16" label="LDAP URL">
+			<xp:inputText id="inputText1"
+				value="#{docConnection.conLDAPURLT}">
+			</xp:inputText>
+			<xe:this.rendered><![CDATA[#{javascript:docConnection.getItemValueString("conTypeT") == "LDAP"}]]></xe:this.rendered>
+		</xe:formRow>
+		<xe:formRow id="formRow17" label="Driver Class">
+			<xp:inputText id="inputText4"
+				value="#{docConnection.conLDAPClass}">
+			</xp:inputText>
+			<xe:this.rendered><![CDATA[#{javascript:docConnection.getItemValueString("conTypeT") == "LDAP"}]]></xe:this.rendered>
+		</xe:formRow>
+		<xe:formRow id="formRow18" label="Username">
+			<xp:inputText id="inputText5"
+				value="#{docConnection.conLDAPUserName}">
+			</xp:inputText>
+			<xe:this.rendered><![CDATA[#{javascript:docConnection.getItemValueString("conTypeT") == "LDAP"}]]></xe:this.rendered>
+		</xe:formRow>
+		<xe:formRow id="formRow19" label="Password">
+			<xp:inputText id="inputText6"
+				value="#{docConnection.conLDAPPassword}">
+			</xp:inputText>
+			<xe:this.rendered><![CDATA[#{javascript:docConnection.getItemValueString("conTypeT") == "LDAP"}]]></xe:this.rendered>
+		</xe:formRow>
+		<xe:formRow id="formRow20" label="Search Base">
+			<xp:inputText id="inputText7"
+				value="#{docConnection.conLDAPSearchBase}">
+			</xp:inputText>
+			<xe:this.rendered><![CDATA[#{javascript:docConnection.getItemValueString("conTypeT") == "LDAP"}]]></xe:this.rendered>
+		</xe:formRow>
+		<xe:formRow id="formRow21" label="Search Filter">
+			<xp:inputText id="inputText8"
+				value="#{docConnection.conLDAPSearchFilter}">
+			</xp:inputText>
+			<xe:this.rendered><![CDATA[#{javascript:docConnection.getItemValueString("conTypeT") == "LDAP"}]]></xe:this.rendered>
+		</xe:formRow>
+		
+	</xe:formTable>
+</xp:view>

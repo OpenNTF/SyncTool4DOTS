@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xe="http://www.ibm.com/xsp/coreex"
+	xmlns:xc="http://www.ibm.com/xsp/custom">
+
+	<xe:applicationLayout id="applicationLayout1">
+		<xe:this.facets>
+			<xp:callback xp:key="LeftColumn" facetName="LeftColumn"
+				id="callback1">
+			</xp:callback>
+			<xp:callback xp:key="RightColumn" facetName="RightColumn"
+				id="callback2">
+			</xp:callback>
+		</xe:this.facets>
+		<xe:this.configuration>
+			<xe:oneuiApplication
+				defaultNavigationPath="#{javascript:compositeData.navigationDefaultPath}"
+				navigationPath="#{javascript:compositeData.navigationPath}"
+				titleBarName="#{javascript:@DbTitle()}"
+				placeBarName="#{javascript:compositeData.pageTitle}"
+				legalText="(c) by WebGate Consulting AG">
+
+
+				<xe:this.footerLinks>
+					<xe:basicContainerNode label="Container 1">
+						<xe:this.children>
+							<xe:basicLeafNode
+								href="http://www.openntf.org" label="OpenNTF.org">
+							</xe:basicLeafNode>
+							<xe:basicLeafNode
+								label="WebGate Consulting AG" href="http://www.webgate.biz">
+							</xe:basicLeafNode>
+						</xe:this.children>
+					</xe:basicContainerNode>
+
+				</xe:this.footerLinks>
+				<xe:this.titleBarTabs>
+					<xe:pageTreeNode label="Definitions"
+						selection="/Definition/.*" page="DefinitionOverview">
+					</xe:pageTreeNode>
+					<xe:pageTreeNode label="Log" page="LogOverview"
+						selection="/Log/.*">
+					</xe:pageTreeNode>
+				</xe:this.titleBarTabs>
+				<xe:this.placeBarActions>
+					<xe:basicContainerNode label="Create Connection">
+						<xe:this.rendered><![CDATA[#{javascript:compositeData.navigationPath == "/Definition/Connections"}]]></xe:this.rendered>
+						<xe:this.children>
+							<xe:pageTreeNode label="SQL"
+								queryString="TYPE=SQL" page="/ConnectionDocument.xsp">
+							</xe:pageTreeNode>
+							<xe:pageTreeNode label="Notes"
+								page="/ConnectionDocument.xsp" queryString="TYPE=Notes">
+							</xe:pageTreeNode>
+							<xe:pageTreeNode label="LDAP"
+								page="/ConnectionDocument.xsp" queryString="TYPE=LDAP">
+							</xe:pageTreeNode>
+						</xe:this.children>
+					</xe:basicContainerNode>
+
+
+
+
+
+					<xe:pageTreeNode label="Create Job"
+						page="/JobDocument.xsp">
+						<xe:this.rendered><![CDATA[#{javascript:compositeData.navigationPath == "/Definition/Jobs"}]]></xe:this.rendered>
+					</xe:pageTreeNode>
+				</xe:this.placeBarActions>
+
+				<xe:this.bannerUtilityLinks>
+					<xe:loginTreeNode label="logout"></xe:loginTreeNode>
+					<xe:userTreeNode>
+						<xe:this.label><![CDATA[#{javascript:"logged in as " + @Name("[CN]",@UserName())}]]></xe:this.label>
+					</xe:userTreeNode>
+				</xe:this.bannerUtilityLinks>
+			</xe:oneuiApplication>
+		</xe:this.configuration>
+		
+		<xp:callback id="OneUIMainAreaCallback"></xp:callback>
+		
+	</xe:applicationLayout>
+
+</xp:view>

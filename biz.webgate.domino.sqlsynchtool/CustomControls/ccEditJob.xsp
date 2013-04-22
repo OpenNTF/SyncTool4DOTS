@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xe="http://www.ibm.com/xsp/coreex">
+	<xp:this.data>
+		<xp:dominoDocument var="docJob" formName="frmJob">
+			<xp:this.querySaveDocument><![CDATA[#{javascript:docJob.replaceItemValue("SourceConnectionIDT", @DbLookup("","plSourceConnection",docJob.getItemValueString("SourceConnectionNameT"), "conIDT"));
+docJob.replaceItemValue("TargetConnectionIDT", @DbLookup("","plTargetConnection",docJob.getItemValueString("TargetConnectionNameT"), "conIDT"));
+if(docJob.getItemValueString("JobIDT") == "") {
+	docJob.replaceItemValue("JobIDT",@Unique());
+}
+
+}]]></xp:this.querySaveDocument></xp:dominoDocument>
+	</xp:this.data>
+
+	<xe:formTable id="frmJob" formTitle="Job"
+		formDescription="Definition for a synchronisation"><xp:this.facets>
+	<xp:panel xp:key="footer">
+		<xp:button id="btSave" value="Save"
+			rendered="#{javascript:docJob.isEditable()}">
+			<xp:eventHandler event="onclick" submit="true"
+				refreshMode="complete">
+				<xp:this.action>
+
+					<xp:actionGroup>
+						<xp:saveDocument var="docJob"></xp:saveDocument>
+						<xp:changeDocumentMode mode="readOnly"
+							var="docJob">
+						</xp:changeDocumentMode>
+					</xp:actionGroup>
+				</xp:this.action>
+			</xp:eventHandler>
+		</xp:button>
+		<xp:button value="Edit" id="btEdit"
+			rendered="#{javascript:!docJob.isEditable()}">
+			<xp:eventHandler event="onclick" submit="true"
+				refreshMode="complete">
+				<xp:this.action>
+					<xp:changeDocumentMode mode="edit" var="docJob"></xp:changeDocumentMode>
+				</xp:this.action>
+			</xp:eventHandler>
+		</xp:button>
+		<xp:link escape="true" id="lnkCancel" text="Cancel" value="/DefinitionJobs.xsp"></xp:link></xp:panel></xp:this.facets>
+		<xe:formRow id="formRow1" label="Name" labelPosition="left" for="itName">
+			<xp:inputText id="itName" value="#{docJob.JobNameT}" defaultValue="new Job"></xp:inputText>
+		</xe:formRow>
+
+
+
+
+		<xe:formRow id="formRow2" label="Source Connection" labelPosition="left" for="itSourceName">
+			<xp:inputText id="itSourceName"
+				value="#{docJob.SourceConnectionNameT}">
+			<xp:typeAhead mode="partial" minChars="1"
+				ignoreCase="true">
+				<xp:this.valueList><![CDATA[#{javascript:getComponent("vpSourceID").getTypeAheadValue(this)}]]></xp:this.valueList>
+			</xp:typeAhead></xp:inputText>
+			<xe:valuePicker id="vpSourceID" for="itSourceName"
+				rendered="#{javascript:docJob.isEditable()}">
+				<xe:this.dataProvider>
+					<xe:dominoViewValuePicker
+						viewName="plSourceConnection" labelColumn="Connection">
+					</xe:dominoViewValuePicker>
+				</xe:this.dataProvider>
+				<xp:text escape="true" id="cbSourceName"
+					value="#{docJob.SourceConnectionNameT}">
+				</xp:text>
+			</xe:valuePicker></xe:formRow>
+		<xe:formRow id="formRow3" for="itTargetName"
+			label="Target Connection" labelPosition="left">
+			<xp:inputText id="itTargetName"
+				value="#{docJob.TargetConnectionNameT}">
+			<xp:typeAhead mode="partial" minChars="1"
+				ignoreCase="true">
+				<xp:this.valueList><![CDATA[#{javascript:getComponent("vpTarget").getTypeAheadValue(this)}]]></xp:this.valueList>
+			</xp:typeAhead></xp:inputText>
+			<xe:valuePicker id="vpTarget" for="itTargetName"
+				rendered="#{javascript:docJob.isEditable()}">
+				<xe:this.dataProvider>
+					<xe:dominoViewValuePicker labelColumn="Connection"
+						viewName="plTargetConnection">
+					</xe:dominoViewValuePicker>
+				</xe:this.dataProvider>
+			</xe:valuePicker>
+		</xe:formRow>
+		<xe:formRow id="formRow4" for="itKeyField" label="Keyfield" labelPosition="left">
+			<xp:inputText id="itKeyField" value="#{docJob.KeyFieldT}"></xp:inputText></xe:formRow>
+		<xe:formRow id="formRow5" label="Keyfieldtype" for="kftString" labelPosition="left">
+			<xp:radio text="Integer" id="kftInteger" groupName="KeyFieldType" value="#{docJob.KeyFieldTypeT}" selectedValue="1"></xp:radio>
+			<xp:radio text="Double" id="kftDouble" value="#{docJob.KeyFieldTypeT}" selectedValue="2" groupName="KeyFieldType"></xp:radio>
+			<xp:radio text="Date" id="kftDate" value="#{docJob.KeyFieldTypeT}" selectedValue="3" groupName="KeyFieldType"></xp:radio>
+			<xp:radio text="String" id="kftString" defaultSelected="true" groupName="KeyFieldType" value="#{docJob.KeyFieldTypeT}" selectedValue="4"></xp:radio>
+			</xe:formRow>
+	</xe:formTable>
+</xp:view>
