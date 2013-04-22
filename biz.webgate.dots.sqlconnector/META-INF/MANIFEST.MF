@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SQLConnector
+Bundle-SymbolicName: biz.webgate.dots.sqlconnector;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: biz.webgate.dots.sqlconnector.Activator
+Bundle-Vendor: WebGate Consulting AG
+Require-Bundle: com.ibm.commons.jdbc;bundle-version="8.5.3",
+ com.ibm.dots;bundle-version="2.0.3"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy
+Import-Package: lotus.domino

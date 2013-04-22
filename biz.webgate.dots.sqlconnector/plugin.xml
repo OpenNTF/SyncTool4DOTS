@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="com.ibm.dots.task">
+      <task
+            class="biz.webgate.dots.sqlconnector.MainTask"
+            description="SQL Connector Task"
+            id="biz.webgate.dots.sqlconnector.MainTasks">
+      </task>
+   </extension>
+
+</plugin>
