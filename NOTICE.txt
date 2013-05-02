@@ -1,0 +1,10 @@
+OpenNTF SycnTools4DOTS
+http://poi4xpages.openntf.org
+© Copyright WebGate Consulting AG
+
+This product includes software contributed to 
+OpenNTF Alliance – (http://www.OpenNTF.org/)
+
+
+List of third party software used in this project:
+ 
